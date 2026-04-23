@@ -39,6 +39,20 @@ def get_player_stats(mlb_id, season):
         if not data or not data.get("stats"):
             continue
         bat, pit = _parse_stats(data["stats"])
+
+        # Only accept batting stats if player has actual at-bats
+        if bat and int(bat.get("atBats", 0) or 0) < 1:
+            bat = {}
+
+        # Only accept pitching stats if player has actually pitched
+        ip = bat and pit.get("inningsPitched", "0") or pit.get("inningsPitched", "0")
+        try:
+            ip_val = float(ip or 0)
+        except (ValueError, TypeError):
+            ip_val = 0
+        if pit and ip_val < 0.1:
+            pit = {}
+
         if bat or pit:
             return bat, pit
     return {}, {}
@@ -94,26 +108,19 @@ def build_pit_str(s):
     )
 
 def update_player_in_html(html, name, bat, pit):
-    """Find player by name, extract their object, replace stats, splice back in."""
     name_str = f'name:"{name}"'
     idx = html.find(name_str)
     if idx < 0:
         print(f"    MISS: '{name}' not found in HTML")
         return html, False
 
-    # Find start of this player's object
     start = html.rfind('\n{', 0, idx)
     if start < 0:
         start = idx
 
-    # Find end: next double-newline followed by { (next player) or end of array
     tail = html[start:]
     end_match = re.search(r'\n\n\{rank:|\n\];', tail[10:])
-    if end_match:
-        chunk_len = 10 + end_match.start()
-    else:
-        chunk_len = 1900  # safe fallback — players are ~2000 chars apart
-
+    chunk_len = (10 + end_match.start()) if end_match else 1900
     chunk = html[start:start + chunk_len]
     changed = False
 
@@ -134,7 +141,6 @@ def update_player_in_html(html, name, bat, pit):
     if not changed:
         return html, False
 
-    # Splice updated chunk back — use original chunk_len for the replacement range
     return html[:start] + chunk + html[start + chunk_len:], True
 
 def main():
