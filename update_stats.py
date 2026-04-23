@@ -93,37 +93,37 @@ def build_pit_str(s):
         f"whip:{fmt(s.get('whip'),'whip')}"
     )
 
-def get_player_chunk(html, name):
-    """Return only the JS object belonging to this player, not beyond."""
+def update_player_in_html(html, name, bat, pit):
+    """Find player by name, extract their object, replace stats, splice back in."""
     name_str = f'name:"{name}"'
     idx = html.find(name_str)
     if idx < 0:
-        return None, -1
-    # Find start of this object (scan back to opening brace)
-    start = html.rfind('\n{', 0, idx)
-    if start < 0:
-        start = idx
-    # Find end: next \n\n{ or \n]; (end of array)
-    end_match = re.search(r'\n\n\{rank:|\n\];', html[start:start+3000])
-    if end_match:
-        end = start + end_match.start()
-    else:
-        end = start + 2000
-    return html[start:end], start
-
-def update_player_in_html(html, name, bat, pit):
-    chunk, start = get_player_chunk(html, name)
-    if chunk is None:
         print(f"    MISS: '{name}' not found in HTML")
         return html, False
 
+    # Find start of this player's object
+    start = html.rfind('\n{', 0, idx)
+    if start < 0:
+        start = idx
+
+    # Find end: next double-newline followed by { (next player) or end of array
+    tail = html[start:]
+    end_match = re.search(r'\n\n\{rank:|\n\];', tail[10:])
+    if end_match:
+        chunk_len = 10 + end_match.start()
+    else:
+        chunk_len = 1900  # safe fallback — players are ~2000 chars apart
+
+    chunk = html[start:start + chunk_len]
     changed = False
+
     if bat:
         new_bat = build_bat_str(bat)
         new_chunk, n = BAT_RE.subn(new_bat, chunk, count=1)
         if n:
             chunk = new_chunk
             changed = True
+
     if pit:
         new_pit = build_pit_str(pit)
         new_chunk, n = PIT_RE.subn(new_pit, chunk, count=1)
@@ -134,11 +134,8 @@ def update_player_in_html(html, name, bat, pit):
     if not changed:
         return html, False
 
-    end = start + len(chunk)
-    # Recalculate end from original
-    _, orig_start = get_player_chunk(html, name)
-    orig_chunk, _ = get_player_chunk(html, name)
-    return html[:orig_start] + chunk + html[orig_start + len(orig_chunk):], True
+    # Splice updated chunk back — use original chunk_len for the replacement range
+    return html[:start] + chunk + html[start + chunk_len:], True
 
 def main():
     print("=" * 60)
@@ -171,12 +168,17 @@ def main():
         if pit:
             print(f"    -> Pit: {pit.get('gamesPlayed','?')}G  {pit.get('era','?')} ERA  {pit.get('inningsPitched','?')} IP  {pit.get('strikeOuts','?')}K")
 
-        html, changed = update_player_in_html(html, name, bat if bat else None, pit if pit else None)
+        html, changed = update_player_in_html(
+            html, name,
+            bat if bat else None,
+            pit if pit else None
+        )
 
         if changed:
             updated += 1
+            print(f"    -> Updated in HTML")
         else:
-            print(f"    WARNING: stat pattern not found for {name}")
+            print(f"    -> WARNING: stat pattern not found in HTML")
             no_match += 1
 
         time.sleep(0.25)
@@ -186,7 +188,7 @@ def main():
         print(f"\nDone. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
         print(f"Saved -> {HTML_FILE}")
     else:
-        print("\nNo changes.")
+        print(f"\nNo changes. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
     print("=" * 60)
 
 if __name__ == "__main__":
