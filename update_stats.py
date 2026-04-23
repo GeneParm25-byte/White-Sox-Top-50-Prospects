@@ -1,11 +1,11 @@
 """
-CWS Prospects Auto-Stat Updater
-================================
+CWS Prospects Auto-Stat Updater — v14 compatible
+=================================================
 Pulls 2026 MiLB/MLB stats from the MLB Stats API for all 50 ranked prospects
 and updates index.html in place.
 
 Run locally:  python update_stats.py
-GitHub Actions runs this automatically on a schedule (see .github/workflows/daily.yml)
+GitHub Actions runs this on a schedule (see .github/workflows/daily.yml)
 """
 
 import json
@@ -20,6 +20,20 @@ HTML_FILE       = "index.html"
 SEASON          = 2026
 MLB_API         = "https://statsapi.mlb.com/api/v1"
 
+# Batting stat pattern in index.html:
+# g:N,ab:N,ba:N.NNN,obp:N.NNN,slg:N.NNN,ops:N.NNN,hr:N,rbi:N,sb:N
+BAT_RE = re.compile(
+    r'g:[\d.null]+,ab:[\d.null]+,ba:[\d.null]+,obp:[\d.null]+'
+    r',slg:[\d.null]+,ops:[\d.null]+,hr:[\d.null]+,rbi:[\d.null]+,sb:[\d.null]+'
+)
+
+# Pitching stat pattern in index.html:
+# era:N.NNN,ip:N.N,g:N,so:N,bb:N,whip:N.NNN
+PIT_RE = re.compile(
+    r'era:[\d.null]+,ip:[\d.null]+,g:[\d.null]+,so:[\d.null]+'
+    r',bb:[\d.null]+,whip:[\d.null]+'
+)
+
 # ── API helpers ───────────────────────────────────────────────────────────────
 def fetch_json(url, params=None):
     try:
@@ -27,40 +41,24 @@ def fetch_json(url, params=None):
         r.raise_for_status()
         return r.json()
     except Exception as e:
-        print(f"  ⚠  API error {url}: {e}")
+        print(f"    warning  API error: {e}")
         return None
 
 
 def get_player_stats(mlb_id, season):
-    """
-    Return (bat_stats, pit_stats) dicts for a player's current season.
-    Tries each MiLB level first, then falls back to MLB.
-    """
     url = f"{MLB_API}/people/{mlb_id}/stats"
-
-    # Try MiLB levels: AAA, AA, A+, A, Rookie
-    for sport_id in [11, 12, 13, 14, 16]:
+    for sport_id in [11, 12, 13, 14, 16, 1]:
         data = fetch_json(url, {
             "stats": "season",
             "season": season,
             "sportId": sport_id,
             "group": "hitting,pitching"
         })
-        if data and data.get("stats"):
-            bat, pit = _parse_stats(data["stats"])
-            if bat or pit:
-                return bat, pit
-
-    # Fall back to MLB
-    data = fetch_json(url, {
-        "stats": "season",
-        "season": season,
-        "sportId": 1,
-        "group": "hitting,pitching"
-    })
-    if data and data.get("stats"):
-        return _parse_stats(data["stats"])
-
+        if not data or not data.get("stats"):
+            continue
+        bat, pit = _parse_stats(data["stats"])
+        if bat or pit:
+            return bat, pit
     return {}, {}
 
 
@@ -80,7 +78,6 @@ def _parse_stats(stats_list):
 
 
 def fmt(val, field):
-    """Format a stat value for injection into JS."""
     if val is None or val == "":
         return "null"
     try:
@@ -120,101 +117,83 @@ def build_pit_str(s):
 
 
 def update_player_in_html(html, name, bat, pit):
-    """Find the player object by name and replace its stat fields."""
-    name_pat = re.escape(f'name:"{name}"')
-    m = re.search(name_pat, html)
-    if not m:
-        print(f"  ✗  '{name}' not found in HTML")
-        return html
+    name_str = f'name:"{name}"'
+    idx = html.find(name_str)
+    if idx < 0:
+        print(f"    MISS  '{name}' not found in HTML")
+        return html, False
 
-    idx = m.start()
-    # Find the enclosing object
-    start_brace = html.rfind('{', max(0, idx - 300), idx)
-    depth = 0
-    obj_end = start_brace
-    for i, ch in enumerate(html[start_brace:], start_brace):
-        if ch == '{':
-            depth += 1
-        elif ch == '}':
-            depth -= 1
-            if depth == 0:
-                obj_end = i + 1
-                break
-
-    obj = html[start_brace:obj_end]
+    chunk_end = min(idx + 4000, len(html))
+    chunk = html[idx:chunk_end]
+    changed = False
 
     if bat:
         new_bat = build_bat_str(bat)
-        obj = re.sub(
-            r"g:[\d.null]+,ab:[\d.null]+,ba:[\d.null]+,obp:[\d.null]+"
-            r",slg:[\d.null]+,ops:[\d.null]+,hr:[\d.null]+,rbi:[\d.null]+,sb:[\d.null]+",
-            new_bat, obj, count=1
-        )
+        new_chunk, n = BAT_RE.subn(new_bat, chunk, count=1)
+        if n:
+            chunk = new_chunk
+            changed = True
 
     if pit:
         new_pit = build_pit_str(pit)
-        obj = re.sub(
-            r"era:[\d.null]+,ip:[\d.null]+,g:[\d.null]+,so:[\d.null]+"
-            r",bb:[\d.null]+,whip:[\d.null]+",
-            new_pit, obj, count=1
-        )
+        new_chunk, n = PIT_RE.subn(new_pit, chunk, count=1)
+        if n:
+            chunk = new_chunk
+            changed = True
 
-    return html[:start_brace] + obj + html[obj_end:]
+    if not changed:
+        return html, False
+
+    return html[:idx] + chunk + html[chunk_end:], True
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     print("=" * 60)
     print(f"CWS Prospects Stat Updater  |  Season {SEASON}")
     print("=" * 60)
 
-    ids_path = Path(PLAYER_IDS_FILE)
-    if not ids_path.exists():
-        print(f"✗ {PLAYER_IDS_FILE} not found.")
-        return
-
-    with open(ids_path) as f:
+    with open(PLAYER_IDS_FILE) as f:
         player_ids = json.load(f)
 
-    html_path = Path(HTML_FILE)
-    if not html_path.exists():
-        print(f"✗ {HTML_FILE} not found.")
-        return
-
-    html = html_path.read_text(encoding="utf-8")
-
-    updated = 0
-    skipped = 0
+    html = Path(HTML_FILE).read_text(encoding="utf-8")
+    original = html
+    updated = skipped = no_match = 0
 
     for name, mlb_id in player_ids.items():
-        print(f"\n  {name} (ID {mlb_id})...")
+        print(f"\n  {name} (ID {mlb_id})")
         bat, pit = get_player_stats(mlb_id, SEASON)
 
         if not bat and not pit:
-            print(f"    → No {SEASON} stats yet")
+            print(f"    -> No {SEASON} stats yet")
             skipped += 1
             continue
 
         if bat:
-            avg = bat.get('avg', '---')
-            print(f"    → Bat: {bat.get('gamesPlayed','?')}G  "
-                  f".{str(round(float(avg)*1000)).zfill(3) if avg != '---' else '---'}  "
-                  f"{bat.get('homeRuns','?')}HR  {bat.get('stolenBases','?')}SB")
+            avg = bat.get('avg', '')
+            try:
+                avg_fmt = f".{str(round(float(avg)*1000)).zfill(3)}"
+            except:
+                avg_fmt = "---"
+            print(f"    -> Bat: {bat.get('gamesPlayed','?')}G  {avg_fmt}  {bat.get('homeRuns','?')}HR  {bat.get('stolenBases','?')}SB")
         if pit:
-            print(f"    → Pit: {pit.get('gamesPlayed','?')}G  "
-                  f"{pit.get('era','?')} ERA  "
-                  f"{pit.get('inningsPitched','?')} IP  "
-                  f"{pit.get('strikeOuts','?')}K")
+            print(f"    -> Pit: {pit.get('gamesPlayed','?')}G  {pit.get('era','?')} ERA  {pit.get('inningsPitched','?')} IP  {pit.get('strikeOuts','?')}K")
 
-        html = update_player_in_html(html, name, bat if bat else None, pit if pit else None)
-        updated += 1
+        html, changed = update_player_in_html(html, name, bat if bat else None, pit if pit else None)
+
+        if changed:
+            updated += 1
+        else:
+            print(f"    WARNING: stat pattern not found in HTML for {name}")
+            no_match += 1
+
         time.sleep(0.25)
 
-    html_path.write_text(html, encoding="utf-8")
-
-    print("\n" + "=" * 60)
-    print(f"Done.  Updated: {updated}  |  Skipped: {skipped}")
-    print(f"Saved → {HTML_FILE}")
+    if html != original:
+        Path(HTML_FILE).write_text(html, encoding="utf-8")
+        print(f"\nDone. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
+        print(f"Saved -> {HTML_FILE}")
+    else:
+        print("\nNo changes.")
     print("=" * 60)
 
 
