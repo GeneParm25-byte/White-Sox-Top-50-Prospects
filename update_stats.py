@@ -39,20 +39,14 @@ def get_player_stats(mlb_id, season):
         if not data or not data.get("stats"):
             continue
         bat, pit = _parse_stats(data["stats"])
-
-        # Only accept batting stats if player has actual at-bats
         if bat and int(bat.get("atBats", 0) or 0) < 1:
             bat = {}
-
-        # Only accept pitching stats if player has actually pitched
-        ip = bat and pit.get("inningsPitched", "0") or pit.get("inningsPitched", "0")
         try:
-            ip_val = float(ip or 0)
+            ip_val = float(pit.get("inningsPitched", 0) or 0)
         except (ValueError, TypeError):
             ip_val = 0
         if pit and ip_val < 0.1:
             pit = {}
-
         if bat or pit:
             return bat, pit
     return {}, {}
@@ -78,7 +72,7 @@ def fmt(val, field):
         f = float(val)
     except (ValueError, TypeError):
         return "null"
-    if field in ("avg", "obp", "slg", "ops", "whip", "era"):
+    if field in ("avg", "ba", "obp", "slg", "ops", "whip", "era"):
         return f"{f:.3f}"
     if field == "ip":
         return f"{f:.1f}"
@@ -108,40 +102,43 @@ def build_pit_str(s):
     )
 
 def update_player_in_html(html, name, bat, pit):
+    """
+    Find the player by name, then replace the FIRST stat pattern match
+    that occurs after their name. This avoids any window size issues.
+    """
     name_str = f'name:"{name}"'
-    idx = html.find(name_str)
-    if idx < 0:
+    name_idx = html.find(name_str)
+    if name_idx < 0:
         print(f"    MISS: '{name}' not found in HTML")
         return html, False
 
-    start = html.rfind('\n{', 0, idx)
-    if start < 0:
-        start = idx
+    # Find next player's name to bound our search
+    next_name_idx = html.find('name:"', name_idx + len(name_str))
+    if next_name_idx < 0:
+        next_name_idx = len(html)
 
-    tail = html[start:]
-    end_match = re.search(r'\n\n\{rank:|\n\];', tail[10:])
-    chunk_len = (10 + end_match.start()) if end_match else 1900
-    chunk = html[start:start + chunk_len]
+    # Work only within this player's section
+    section = html[name_idx:next_name_idx]
     changed = False
 
     if bat:
         new_bat = build_bat_str(bat)
-        new_chunk, n = BAT_RE.subn(new_bat, chunk, count=1)
+        new_section, n = BAT_RE.subn(new_bat, section, count=1)
         if n:
-            chunk = new_chunk
+            section = new_section
             changed = True
 
     if pit:
         new_pit = build_pit_str(pit)
-        new_chunk, n = PIT_RE.subn(new_pit, chunk, count=1)
+        new_section, n = PIT_RE.subn(new_pit, section, count=1)
         if n:
-            chunk = new_chunk
+            section = new_section
             changed = True
 
     if not changed:
         return html, False
 
-    return html[:start] + chunk + html[start + chunk_len:], True
+    return html[:name_idx] + section + html[next_name_idx:], True
 
 def main():
     print("=" * 60)
