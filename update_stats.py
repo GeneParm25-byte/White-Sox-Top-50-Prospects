@@ -1,11 +1,63 @@
-import json
 import re
 import requests
 import time
 from pathlib import Path
 
-PLAYER_IDS_FILE = "player_ids.json"
-HTML_FILE       = "index.html"
+HTML_FILE = "cwsox_prospects_2026_v15.html"
+
+PLAYER_IDS = {
+    "Noah Schultz":           702273,
+    "Braden Montgomery":      695731,
+    "Caleb Bonemer":          815352,
+    "Hagen Smith":            696146,
+    "Billy Carlson":          815814,
+    "Christian Oppor":        803291,
+    "Sam Antonacci":          803011,
+    "William Bergolla Jr.":   703151,
+    "Jaden Fauske":           828262,
+    "Samuel Zavala":          694214,
+    "Javier Mogollon":        808684,
+    "Kyle Lodise":            827517,
+    "George Wolkow":          805804,
+    "Blake Larson":           820836,
+    "Mathias LaCombe":        807187,
+    "Jeral Perez":            800419,
+    "Landon Hodge":           821933,
+    "Alexander Albertus":     800316,
+    "Jacob Gonzalez":         694378,
+    "Wikelman González":      682790,
+    "Shane Murphy":           690294,
+    "Mason Adams":            690279,
+    "Drew Thorpe":            689672,
+    "Drew Romo":              691011,
+    "Anthony DePino":         834962,
+    "Colby Shelton":          701333,
+    "Riley Gowens":           803035,
+    "David Sandlin":          689818,
+    "Ryan Burrowes":          802018,
+    "Nick McLain":            695607,
+    "Ky Bush":                681066,
+    "Jairo Iriarte":          683568,
+    "Lucas Gordon":           690981,
+    "Justin Sinibaldi":       811958,
+    "Grant Umberger":         802359,
+    "Duncan Davitt":          701474,
+    "Tyler Schweitzer":       805326,
+    "Frankeli Arias":         802087,
+    "Gabe Davis":             805031,
+    "Juan Carela":            683636,
+    "Luis Reyes":             501760,
+    "Rikuu Nishida":          807747,
+    "Aldrin Batista":         702881,
+    "Tanner McDougal":        701780,
+    "Eduardo Herrera":        815901,
+    "Alejandro Cruz":         829078,
+    "Yobal Rodriguez":        830034,
+    "Christian Gonzalez":     822619,
+    # Signed Jan 2026 — no MLBAM ID assigned yet
+    "Sebastian Romero":       None,
+    "Fernando Graterol":      None,
+}
 SEASON          = 2026
 MLB_API         = "https://statsapi.mlb.com/api/v1"
 
@@ -29,7 +81,8 @@ def fetch_json(url, params=None):
 
 def get_player_stats(mlb_id, season):
     url = f"{MLB_API}/people/{mlb_id}/stats"
-    for sport_id in [11, 12, 13, 14, 16, 1]:
+    # Search from MLB (1) down through all MiLB levels
+    for sport_id in [1, 11, 12, 13, 14, 16]:
         data = fetch_json(url, {
             "stats": "season", "season": season,
             "sportId": sport_id, "group": "hitting,pitching"
@@ -46,6 +99,8 @@ def get_player_stats(mlb_id, season):
         if pit and ip_val < 0.1:
             pit = {}
         if bat or pit:
+            level = {1: "MLB", 11: "AAA", 12: "AA", 13: "A+", 14: "A", 16: "CPX"}.get(sport_id, str(sport_id))
+            print(f"    -> Level: {level}")
             return bat, pit
     return {}, {}
 
@@ -77,29 +132,29 @@ def fmt(val, field):
     return str(int(f))
 
 def build_bat_str(s):
-    result = (
-        f"g:{fmt(s.get('gamesPlayed'),'g')},"
-        f"ab:{fmt(s.get('atBats'),'ab')},"
-        f"ba:{fmt(s.get('avg'),'ba')},"
-        f"obp:{fmt(s.get('obp'),'obp')},"
-        f"slg:{fmt(s.get('slg'),'slg')},"
-        f"ops:{fmt(s.get('ops'),'ops')},"
-        f"hr:{fmt(s.get('homeRuns'),'hr')},"
-        f"rbi:{fmt(s.get('rbi'),'rbi')},"
-        f"sb:{fmt(s.get('stolenBases'),'sb')}"
-    )
+    g   = fmt(s.get('gamesPlayed'), 'g')
+    ab  = fmt(s.get('atBats'), 'ab')
+    ba  = fmt(s.get('avg'), 'ba')
+    obp = fmt(s.get('obp'), 'obp')
+    slg = fmt(s.get('slg'), 'slg')
+    ops = fmt(s.get('ops'), 'ops')
+    hr  = fmt(s.get('homeRuns'), 'hr')
+    rbi = fmt(s.get('rbi'), 'rbi')
+    sb  = fmt(s.get('stolenBases'), 'sb')
+    result = f"g:{g},ab:{ab},ba:{ba},obp:{obp},slg:{slg},ops:{ops},hr:{hr},rbi:{rbi},sb:{sb}"
+    print(f"    -> Bat: {g}G  {ba}  {hr}HR  {sb}SB")
     print(f"    -> Writing: {result}")
     return result
 
 def build_pit_str(s):
-    result = (
-        f"era:{fmt(s.get('era'),'era')},"
-        f"ip:{fmt(s.get('inningsPitched'),'ip')},"
-        f"g:{fmt(s.get('gamesPlayed'),'g')},"
-        f"so:{fmt(s.get('strikeOuts'),'so')},"
-        f"bb:{fmt(s.get('baseOnBalls'),'bb')},"
-        f"whip:{fmt(s.get('whip'),'whip')}"
-    )
+    era  = fmt(s.get('era'), 'era')
+    ip   = fmt(s.get('inningsPitched'), 'ip')
+    g    = fmt(s.get('gamesPlayed'), 'g')
+    so   = fmt(s.get('strikeOuts'), 'so')
+    bb   = fmt(s.get('baseOnBalls'), 'bb')
+    whip = fmt(s.get('whip'), 'whip')
+    result = f"era:{era},ip:{ip},g:{g},so:{so},bb:{bb},whip:{whip}"
+    print(f"    -> Pit: {g}G  {era} ERA  {ip} IP  {so}K")
     print(f"    -> Writing: {result}")
     return result
 
@@ -119,7 +174,6 @@ def update_player_in_html(html, name, bat, pit):
 
     if bat:
         new_bat = build_bat_str(bat)
-        # Show what we're replacing
         m = BAT_RE.search(section)
         if m:
             print(f"    -> Replacing: {m.group()}")
@@ -152,15 +206,16 @@ def main():
     print(f"CWS Prospects Stat Updater  |  Season {SEASON}")
     print("=" * 60)
 
-    with open(PLAYER_IDS_FILE) as f:
-        player_ids = json.load(f)
-
     html = Path(HTML_FILE).read_text(encoding="utf-8")
     original = html
     updated = skipped = no_match = 0
 
-    for name, mlb_id in player_ids.items():
+    for name, mlb_id in PLAYER_IDS.items():
         print(f"\n  {name} (ID {mlb_id})")
+        if mlb_id is None:
+            print(f"    -> No MLBAM ID yet, skipping")
+            skipped += 1
+            continue
         bat, pit = get_player_stats(mlb_id, SEASON)
 
         if not bat and not pit:
@@ -185,9 +240,9 @@ def main():
 
     if html != original:
         Path(HTML_FILE).write_text(html, encoding="utf-8")
-        print(f"\nDone. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
-    else:
-        print(f"\nNo changes. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
+        print(f"\nSaved -> {HTML_FILE}")
+
+    print(f"\nDone. Updated: {updated} | No stats: {skipped} | Pattern miss: {no_match}")
     print("=" * 60)
 
 if __name__ == "__main__":
