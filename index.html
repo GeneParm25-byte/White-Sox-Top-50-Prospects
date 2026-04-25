@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CWS Top 50 Prospects 2026 — Edition 1</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#1a1a1a;background:#fff;padding:16px}
+h1{font-size:17px;font-weight:700;margin-bottom:2px}
+.sub{font-size:11px;color:#888;margin-bottom:14px}
+.toolbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;align-items:center}
+.toolbar input[type=text]{font-size:12px;padding:5px 8px;border:1px solid #ddd;border-radius:6px;flex:1;min-width:130px;color:#111 !important}
+.toolbar select{font-size:12px;padding:5px 8px;border:1px solid #ddd;border-radius:6px;background:#fff;color:#111 !important;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23555'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:24px}
+.tab-bar{display:flex;gap:4px;margin-bottom:10px}
+.tab{font-size:11px;padding:4px 12px;border:1px solid #ddd;border-radius:6px;background:#fff;color:#666;cursor:pointer}
+.tab.active{background:#f0f0f0;color:#111;border-color:#bbb}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;font-size:12px;width:100%}
+thead th{text-align:left;font-size:11px;font-weight:600;color:#555;padding:6px 8px;border-bottom:1px solid #e0e0e0;white-space:nowrap;cursor:pointer;background:#fff}@media(min-width:769px){thead th{position:sticky;top:0;z-index:3}}
+@media(min-width:769px){thead th.grp{position:sticky;top:0;z-index:3}}thead th.grp{background:#f8f8f8;font-size:10px;font-weight:700;letter-spacing:.05em;color:#888;padding:3px 8px;border-bottom:1px solid #e0e0e0;cursor:default}
+@media(min-width:769px){thead th.sticky{position:sticky;z-index:4!important;background:#fff}}
+@media(min-width:769px){thead th.grp.sticky{background:#f8f8f8!important;z-index:4!important}}
+thead th:hover:not(.no-sort){color:#111}
+thead th.sorted{color:#111}
+.sa{margin-left:2px;font-size:9px;opacity:0.4}
+th.sorted .sa{opacity:1}
+tbody tr.dr{border-bottom:1px solid #f3f3f3;cursor:pointer}
+tbody tr.dr:hover td{background:#fafafa}
+tbody tr.dr.exp td{background:#fafafa}
+td{padding:6px 8px;vertical-align:middle;white-space:nowrap}
+td.sticky{background:inherit}@media(min-width:769px){td.sticky{position:sticky;z-index:2}}
+tr:hover td.sticky{background:#fafafa}
+tr.exp td.sticky{background:#fafafa}
+.pname{font-weight:700;font-size:13px;line-height:1.2}
+.tier-pill{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;margin-top:2px}
+.t1{background:#dbeafe;color:#1e40af}
+.t2{background:#dcfce7;color:#166534}
+.t3{background:#f3f4f6;color:#374151}
+.t4{background:#fde8e8;color:#991b1b}
+.badge{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle}
+.badge-inj{background:#fde8e8;color:#b91c1c}
+.badge-mlb{background:#dbeafe;color:#1d4ed8}
+.badge-tjs{background:#fef3c7;color:#92400e}
+.acq-pill{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px}
+.acq-draft{background:#ede9fe;color:#5b21b6}
+.acq-trade{background:#fef3c7;color:#92400e}
+.acq-intl{background:#dcfce7;color:#166534}
+.acq-waiver{background:#fde8e8;color:#991b1b}
+.acq-udfa{background:#f3f4f6;color:#374151}
+.type-tag{font-size:9px;font-weight:700;padding:1px 4px;border-radius:3px;margin-left:3px;background:#f0f0f0;color:#666}
+.fv-badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 7px;border-radius:4px;background:#111;color:#fff;min-width:30px;text-align:center}
+.sg{color:#15803d;font-weight:600}
+.sb2{color:#b91c1c;font-weight:600}
+.na{color:#bbb;font-size:11px}
+/* Expanded */
+.exp-cell{background:#f8f9fa;padding:14px 18px 18px;border-bottom:1px solid #e0e0e0;font-size:12px;line-height:1.75;white-space:normal}
+.exp-top{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.exp-name{font-size:15px;font-weight:800}
+.exp-meta{font-size:11px;color:#888}
+.exp-acq{margin-bottom:12px}
+.grades-row{display:flex;align-items:flex-start;gap:20px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;flex-wrap:wrap}
+.fv-block .fv-lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.fv-num{font-size:26px;font-weight:900;background:#111;color:#fff;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:6px}
+.tools-wrap .tg-lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.tools-grid{display:flex;gap:10px;flex-wrap:wrap}
+.tg-item{text-align:center;min-width:40px}
+.tg-name{font-size:9px;color:#aaa;font-weight:700;text-transform:uppercase;margin-bottom:2px}
+.tg-val{font-size:16px;font-weight:800;color:#111}
+.tg-val.g70{color:#0f4c81}.tg-val.g60{color:#15803d}.tg-val.g40{color:#b45309}.tg-val.g30{color:#b91c1c}
+.vitals{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee}
+.v-lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.v-val{font-size:12px;color:#111;line-height:1.4}
+.exp-section{margin-bottom:10px}
+.e-lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.e-body{font-size:12px;color:#555;line-height:1.75}
+.e-body strong{color:#111;font-weight:700}
+.pipe-note{margin-top:12px;padding-top:10px;border-top:1px solid #eee;font-size:11px;color:#aaa;font-style:italic;line-height:1.6}
+/* Edit */
+
+
+
+
+.edit-full{grid-column:1/-1}
+
+
+
+
+
+
+
+
+
+
+
+
+.col-div{border-left:1px solid #ebebeb}
+.mv-up{color:#15803d;font-size:10px;font-weight:800;white-space:nowrap}
+.mv-dn{color:#b91c1c;font-size:10px;font-weight:800;white-space:nowrap}
+.mv-new{color:#5b21b6;font-size:9px;font-weight:800;background:#ede9fe;padding:1px 4px;border-radius:3px}
+.mv-flat{color:#ccc;font-size:11px}
+
+/* ── Panels ── */
+.panels{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.panel{border:1px solid #e5e5e5;border-radius:8px;overflow:hidden;flex:1;min-width:260px}
+.panel-hdr{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;background:#f8f8f8;border-bottom:1px solid #e5e5e5;cursor:pointer;user-select:none}
+.panel-hdr h3{font-size:12px;font-weight:700;color:#111;margin:0}
+.panel-hdr .ph-sub{font-size:10px;color:#999;margin-top:1px}
+.panel-toggle{font-size:14px;color:#999;line-height:1}
+.panel-body{padding:12px 13px;font-size:12px;line-height:1.65;display:none}
+.panel-body.open{display:block}
+/* Why Different */
+.diff-item{display:flex;gap:8px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.diff-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.diff-rank{font-size:11px;font-weight:800;color:#fff;background:#111;border-radius:4px;padding:1px 6px;white-space:nowrap;align-self:flex-start;margin-top:2px}
+.diff-text{font-size:12px;color:#444;line-height:1.55}
+.diff-text strong{color:#111}
+/* Changelog */
+.cl-entry{display:flex;gap:10px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0f0f0;align-items:flex-start}
+.cl-entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cl-date{font-size:10px;font-weight:700;color:#999;white-space:nowrap;min-width:52px;margin-top:2px}
+.cl-body{font-size:12px;color:#444;line-height:1.5}
+.cl-body strong{color:#111}
+.cl-up{color:#15803d;font-weight:800;font-size:10px;background:#dcfce7;padding:1px 5px;border-radius:3px;margin-right:4px}
+.cl-dn{color:#b91c1c;font-weight:800;font-size:10px;background:#fde8e8;padding:1px 5px;border-radius:3px;margin-right:4px}
+.cl-new{color:#5b21b6;font-weight:800;font-size:10px;background:#ede9fe;padding:1px 5px;border-radius:3px;margin-right:4px}
+.cl-fix{color:#92400e;font-weight:800;font-size:10px;background:#fef3c7;padding:1px 5px;border-radius:3px;margin-right:4px}
+/* Watching */
+.watch-item{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+.watch-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.watch-name{font-size:12px;font-weight:800;color:#111}
+.watch-meta{font-size:10px;color:#999;margin-bottom:3px}
+.watch-body{font-size:12px;color:#555;line-height:1.55}
+/* Callup tracker */
+.callup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.callup-card{border:1px solid #e5e5e5;border-radius:6px;padding:8px 10px}
+.callup-name{font-size:12px;font-weight:800;color:#111}
+.callup-eta{font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:5px}
+.eta-now{background:#dbeafe;color:#1e40af}
+.eta-soon{background:#dcfce7;color:#166534}
+.eta-mid{background:#fef3c7;color:#92400e}
+.eta-late{background:#f3f4f6;color:#374151}
+.callup-detail{font-size:11px;color:#666;margin-top:3px;line-height:1.5}
+
+/* ── Mobile card layout ── */
+.mobile-list{display:none}
+.mc{border:1px solid #e5e5e5;border-radius:8px;margin-bottom:8px;overflow:hidden;cursor:pointer}
+.mc-top{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff}
+.mc-rank{font-size:13px;font-weight:800;color:#888;min-width:24px}
+.mc-info{flex:1;min-width:0}
+.mc-name{font-size:14px;font-weight:800;color:#111;line-height:1.2}
+.mc-sub{font-size:11px;color:#888;margin-top:2px;display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.mc-fv{font-size:12px;font-weight:800;background:#111;color:#fff;padding:2px 8px;border-radius:4px;min-width:28px;text-align:center}
+.mc-stat{font-size:11px;font-weight:700;color:#444;background:#f5f5f5;padding:2px 6px;border-radius:4px}
+.mc-stat.sg{background:#dcfce7;color:#166534}
+.mc-stat.sb2{background:#fde8e8;color:#b91c1c}
+.mc-body{background:#f8f9fa;padding:12px 14px;border-top:1px solid #eee;display:none;font-size:12px;line-height:1.7}
+.mc-body.open{display:block}
+.mc-grades{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 12px;padding-bottom:10px;border-bottom:1px solid #eee}
+.mc-grades .tg-item{text-align:center;min-width:36px}
+.mc-section{margin-bottom:8px}
+.mc-lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.mc-val{font-size:12px;color:#333;line-height:1.6}
+.mc-val strong{color:#111}
+.mc-vitals{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 12px;margin:8px 0 12px;padding-bottom:10px;border-bottom:1px solid #eee}
+.mc-acq{font-size:10px;color:#888;margin-bottom:10px;line-height:1.5}
+.mc-pipe{font-size:10px;color:#aaa;font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid #eee;line-height:1.5}
+
+@media(max-width:768px){
+  body{padding:8px}
+
+  /* ── Unrestricted horizontal scroll ── */
+  .tbl-wrap{
+    overflow-x:scroll;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-x pan-y;
+    overscroll-behavior-x:contain;
+    position:relative;
+    margin:0 -8px;
+    padding:0 8px 4px;
+    isolation:isolate;
+    width:calc(100% + 16px);
+    max-width:calc(100% + 16px);
+  }
+
+  /* Kill ALL sticky on mobile — both class-based and inline style attributes.
+     The [style] selectors override inline position:sticky that !important
+     alone can't beat in all browsers. transform:none stops any composite
+     layer that could block scroll. */
+  td,
+  td.sticky,
+  td[style],
+  thead th,
+  thead th.sticky,
+  thead th[style],
+  thead th.grp,
+  thead th.grp.sticky{
+    position:static !important;
+    left:auto !important;
+    top:auto !important;
+    z-index:auto !important;
+    will-change:auto !important;
+    transform:none !important;
+  }
+
+  /* The table itself should scroll freely without interference */
+  table{
+    will-change:auto;
+    transform:none;
+  }
+
+  /* Tighter cells on mobile */
+  td,thead th{padding:5px 6px;font-size:11px}
+  .pname{font-size:12px}
+  .tier-pill{font-size:8px;padding:1px 4px}
+  .fv-badge{font-size:10px;padding:2px 5px;min-width:24px}
+  .badge{font-size:8px}
+
+  /* Panels */
+  .panels{flex-direction:column}
+  .panel{min-width:0}
+  .callup-grid{grid-template-columns:1fr}
+  .toolbar{gap:5px}
+  .toolbar input[type=text]{font-size:14px;padding:7px 10px}
+  .toolbar select{font-size:13px;padding:6px 6px;flex:1}
+  .tab{font-size:12px;padding:6px 12px}
+  h1{font-size:15px}
+
+  /* Expanded card */
+  .exp-cell{padding:10px 12px;white-space:normal}
+  .vitals{grid-template-columns:1fr 1fr}
+  
+}
+@media(min-width:769px){
+  .mobile-list{display:none!important}
+}
+
+/* ── Dark Mode ──────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --bg2: #f8f9fa;
+  --bg3: #f0f2f4;
+  --border: #e0e0e0;
+  --text: #111111;
+  --text2: #555555;
+  --text3: #888888;
+  --header-bg: #ffffff;
+  --row-hover: #f5f7ff;
+  --pill-elite-bg: #1e3a8a; --pill-elite-text: #bfdbfe;
+  --pill-high-bg: #14532d; --pill-high-text: #bbf7d0;
+  --pill-int-bg: #374151; --pill-int-text: #e5e7eb;
+  --pill-deep-bg: #7f1d1d; --pill-deep-text: #fecaca;
+  --tier-elite: #2563eb;
+  --tier-high: #16a34a;
+  --tier-int: #6b7280;
+  --tier-deep: #dc2626;
+  --grade-my-bg: #f0f4ff;
+  --grade-avg-bg: #f5f0ff;
+}
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --bg2: #1a1d27;
+  --bg3: #222536;
+  --border: #2e3248;
+  --text: #e8eaf6;
+  --text2: #9ca3c4;
+  --text3: #6b7280;
+  --header-bg: #1a1d27;
+  --row-hover: #1e2235;
+  --pill-elite-bg: #3730a3; --pill-elite-text: #c7d2fe;
+  --pill-high-bg: #1d4ed8; --pill-high-text: #bfdbfe;
+  --pill-int-bg: #15803d; --pill-int-text: #bbf7d0;
+  --pill-deep-bg: #b45309; --pill-deep-text: #fde68a;
+  --tier-elite: #60a5fa;
+  --tier-high: #4ade80;
+  --tier-int: #9ca3af;
+  --tier-deep: #f87171;
+  --grade-my-bg: #1e2040;
+  --grade-avg-bg: #221e35;
+}
+
+/* ── Tier Border Colors ─────────────────────────────── */
+tr.tier-Elite td:first-child { border-left: 4px solid var(--tier-elite); }
+tr.tier-High td:first-child { border-left: 4px solid var(--tier-high); }
+tr.tier-Intriguing td:first-child { border-left: 4px solid var(--tier-int); }
+tr.tier-Deep td:first-child { border-left: 4px solid var(--tier-deep); }
+
+/* ── Grade column highlights ────────────────────────── */
+.grade-my  { background: var(--grade-my-bg) !important; }
+.grade-avg { background: var(--grade-avg-bg) !important; }
+
+
+/* ── Dark mode toggle ───────────────────────────────── */
+.dark-toggle {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.dark-toggle:hover { opacity: 0.8; }
+
+/* ── Mobile full-width expand ───────────────────────── */
+.expand-overlay {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--bg);
+  border-top: 3px solid var(--tier-elite);
+  z-index: 1000;
+  max-height: 75vh;
+  overflow-y: auto;
+  padding: 20px 24px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.2);
+  border-radius: 16px 16px 0 0;
+}
+@media(min-width:769px){
+  .expand-overlay {
+    bottom: 0; left: 0; right: 0;
+    max-height: 70vh;
+    padding: 24px 32px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+.expand-overlay.active { display: block; }
+.expand-overlay-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: var(--bg3);
+  border: none;
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* ── Sticky tier group headers ──────────────────────── */
+tr.grp-header td {
+  /* position: sticky; top: 37px; -- desktop only */
+  z-index: 3;
+  background: var(--bg2);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text2);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Age at ETA column ──────────────────────────────── */
+.age-at-eta { color: var(--text3); font-size: 10px; }
+
+/* ── Consensus badge ─────────────────────────────────── */
+.con-rank { font-style: italic; color: var(--text3); }
+
+/* ── General dark mode overrides ────────────────────── */
+body { background: var(--bg); color: var(--text); }
+.tbl-wrap { background: var(--bg); }
+thead th { background: var(--header-bg) !important; color: var(--text2) !important; border-bottom-color: var(--border) !important; }
+td { color: var(--text); border-bottom-color: var(--border) !important; }
+tr:hover td { background: var(--row-hover) !important; }
+.panel { background: var(--bg2) !important; border-color: var(--border) !important; }
+
+
+
+.tab { background: var(--bg3) !important; color: #c9d1e0 !important; }
+.tab.active { background: #e8eaf6 !important; color: #0f1117 !important; }
+
+/* ── Search highlight ───────────────────────────────── */
+tr[class*="search-match"] td { background: rgba(99,102,241,0.08) !important; }
+[data-theme="dark"] tr[class*="search-match"] td { background: rgba(99,102,241,0.15) !important; }
+
+/* ── Mobile expand overlay content ─────────────────── */
+@media(max-width:768px){
+  .exp-cell { padding: 0; }
+  .exp-section { margin-bottom: 16px; }
+  .exp-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--text3); margin-bottom: 4px;
+  }
+  .exp-value { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .tool-grades { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .tool-grade-pill {
+    background: var(--bg3); border-radius: 8px;
+    padding: 6px 10px; font-size: 12px; font-weight: 700;
+    display: flex; flex-direction: column; align-items: center; min-width: 48px;
+  }
+  .tool-grade-pill span { font-size: 9px; font-weight: 400; color: var(--text3); }
+  .expand-overlay .pname-big {
+    font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 4px;
+  }
+  .expand-overlay .tier-pill { margin-right: 6px; }
+}
+
+/* ── Print stylesheet ───────────────────────────────── */
+@media print {
+  .toolbar, .panels, .tab-bar, .expand-overlay, .dark-toggle { display: none !important; }
+  .tbl-wrap { overflow: visible !important; }
+  body { background: white; color: black; font-size: 10px; }
+  thead th { background: #f0f0f0 !important; color: black !important; }
+  tr { page-break-inside: avoid; }
+  .tier-pill { border: 1px solid #999; }
+  td { border-bottom: 1px solid #ddd !important; }
+}
+
+.expand-scrim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+.expand-scrim.active { display: block; }
+
+[data-theme="dark"] .ph-sub{color:#9ca3af;}
+
+/* ── Dark mode text contrast fixes ─────────────────── */
+[data-theme="dark"] body { color: #e8eaf6; }
+[data-theme="dark"] .tier-pill { font-weight: 700; }
+[data-theme="dark"] .fv-badge { color: #ffffff; }
+[data-theme="dark"] .acq-pill { color: #ffffff; font-weight: 600; }
+[data-theme="dark"] .na { color: #6b7280; }
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: #f9fafb; }
+[data-theme="dark"] .panel-hdr { color: #f9fafb; }
+[data-theme="dark"] .ph-sub { color: #9ca3af; }
+[data-theme="dark"] input, [data-theme="dark"] select { color: #e8eaf6 !important; }
+[data-theme="dark"] .tab { color: #d1d5db !important; }
+[data-theme="dark"] .tab.active { color: #0f1117 !important; background: #e8eaf6 !important; }
+[data-theme="dark"] .callup-name { color: #f9fafb; }
+[data-theme="dark"] .callup-detail { color: #9ca3af; }
+[data-theme="dark"] .watch-name { color: #f9fafb; }
+[data-theme="dark"] .watch-note { color: #9ca3af; }
+[data-theme="dark"] .watch-meta { color: #6b7280; }
+[data-theme="dark"] .exp-name { color: #ffffff; }
+[data-theme="dark"] .exp-meta { color: #9ca3af; }
+[data-theme="dark"] .sortable-header { color: #d1d5db; }
+[data-theme="dark"] .grp { color: #9ca3af !important; }
+[data-theme="dark"] .toolbar select option { background: #1a1d27; color: #e8eaf6; }
+
+[data-theme="dark"] .fv-badge { 
+  background: #1e293b !important; 
+  color: #f1f5f9 !important; 
+  border: 1px solid #334155;
+}
+[data-theme="dark"] .acq-pill { color: #ffffff !important; }
+[data-theme="dark"] .callup-name { color: #f1f5f9 !important; }
+[data-theme="dark"] .callup-detail { color: #94a3b8 !important; }
+[data-theme="dark"] .watch-name { color: #f1f5f9 !important; }
+[data-theme="dark"] .watch-note { color: #94a3b8 !important; }
+[data-theme="dark"] .watch-meta { color: #64748b !important; }
+[data-theme="dark"] .na { color: #4b5563 !important; }
+[data-theme="dark"] h1 { color: #f8fafc !important; }
+[data-theme="dark"] .sub { color: #94a3b8 !important; }
+
+/* ── Dark mode targeted fixes ───────────────────────── */
+[data-theme="dark"] .acq-pill { color: #ffffff !important; font-weight: 700; }
+[data-theme="dark"] .fv-badge { background: #1e293b !important; color: #f1f5f9 !important; border: 1px solid #334155; }
+[data-theme="dark"] td { color: #cbd5e1 !important; }
+[data-theme="dark"] thead th { color: #94a3b8 !important; }
+[data-theme="dark"] .pname { color: #f1f5f9 !important; }
+[data-theme="dark"] .na { color: #475569 !important; }
+[data-theme="dark"] .exp-sub { color: #64748b !important; }
+
+[data-theme="dark"] .acq-draft  { background: #3730a3; color: #e0e7ff; }
+[data-theme="dark"] .acq-trade  { background: #92400e; color: #fef3c7; }
+[data-theme="dark"] .acq-intl   { background: #166534; color: #dcfce7; }
+[data-theme="dark"] .acq-waiver { background: #991b1b; color: #fde8e8; }
+
+[data-theme="dark"] .toolbar select { background: #222536 !important; color: #e2e8f0 !important; border-color: #2e3248 !important; -webkit-appearance:none; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23aaa'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 8px center; padding-right:24px; }
+[data-theme="dark"] .toolbar input[type=text] { 
+  background: #222536 !important; 
+  color: #e2e8f0 !important; 
+  border-color: #2e3248 !important; 
+}
+[data-theme="dark"] .toolbar input[type=text]::placeholder { color: #64748b; }
+
+.toolbar select option { color: #111; background: #fff; }
+
+[data-theme="dark"] .panel-hdr { background: var(--bg2) !important; }
+[data-theme="dark"] .panel-hdr h3 { color: #f1f5f9 !important; }
+[data-theme="dark"] .panel-hdr .ph-sub { color: #94a3b8 !important; }
+[data-theme="dark"] .panel-toggle { color: #94a3b8 !important; }
+[data-theme="dark"] .panel-body { background: var(--bg) !important; color: #cbd5e1 !important; }
+[data-theme="dark"] .panel-body p { color: #cbd5e1; }
+[data-theme="dark"] 
+[data-theme="dark"] .panel-body em { color: #94a3b8; }
+</style>
+</head>
+<body>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:2px">
+<h1>Chicago White Sox — Top 50 Prospects 2026</h1>
+<button onclick="window.print()" style="font-size:11px;padding:5px 12px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;white-space:nowrap">🖨 Print / Save PDF</button>
+</div>
+<p class="sub"><strong style="color:#111">👆 Click any row to expand the full scouting report</strong> &nbsp;·&nbsp; Edition 1 · April 21, 2026</p>
+<!-- PANELS -->
+<div class="panels">
+<div class="panel">
+<div class="panel-hdr" onclick="togglePanel('p-diff')"><div><h3>📋 How These Rankings Work</h3><div class="ph-sub">The philosophy behind the list</div></div><span class="panel-toggle" id="p-diff-icon">＋</span></div>
+<div class="panel-body" id="p-diff">
+<div style="font-size:12px;color:#444;line-height:1.7">
+<p style="margin-bottom:10px"><strong>What this is:</strong> A personal pet project, nothing more. I am not a scout, I have no professional affiliation, and I make no claim to know more than the people who evaluate these players for a living. This is just my own take — a fan who follows the system closely, reads everything published, and enjoys thinking through how these players stack up. Take it in that spirit.</p>
+<p style="margin-bottom:10px"><strong>How the rankings work:</strong> I use BA, MLB Pipeline, FanGraphs, ESPN, and Keith Law as inputs — but my rank drives the order, not their grades. When the results tell a different story than the tools, I lean toward the results. FanGraphs has <strong>Bonemer #1</strong> — I have him #3; BA (#2 org) and ESPN (#3 org) are closer to my view, and Law has him at #44 nationally which feels light for a 20-year-old at High-A with that bat speed. FanGraphs has <strong>Oppor #4</strong> — I have him #7, ahead of where most outlets place him given the four-pitch mix at 21 and his 2025 cross-level dominance; the rough Double-A debut is early noise. BA has him #8 org and ESPN #7 org, both roughly in line with my placement; Law has not yet listed him nationally. I have <strong>Bergolla at #9</strong> when FanGraphs has him #17 and BA has him #12 — a 5% strikeout rate at Double-A is historically rare and both are undervaluing it. ESPN (#9 org) is the one outlet closest to my read. <strong>Zavala (#11)</strong> is ranked #23 by FanGraphs and absent from Pipeline's top 30 — his .961 OPS at 21 in Double-A with plus defense says both are wrong; BA and ESPN have not listed him nationally either, which I think will change. <strong>Murphy (#24)</strong> barely appears on any major list — BA has him #28 org, FanGraphs #36 org, and ESPN and Law have not listed him at all — but he led all of minor league baseball in WHIP in 2025 and that kind of performance demands a spot. <strong>Gowens (#30)</strong> is a similar story: FanGraphs has him #32 org and BA, ESPN, and Law have not listed him, despite leading the entire White Sox system in starts, innings, and strikeouts at Double-A last year — he belongs here.</p>
+<p style="margin-bottom:10px"><strong>FV grades:</strong> The Future Value grades shown are an aggregate drawn from multiple sources — Baseball America, MLB Pipeline, FanGraphs, and others. Where those sources disagree I weight toward the most recent evaluation. The <strong>BA</strong> column shows Baseball America's risk-adjusted present grade (not their raw ceiling grade). The <strong>My Grade</strong> column is my own FV assessment using a modified version of FanGraphs' WAR-to-FV scale. <strong>A note on My Grade:</strong> these grades reflect what I think a player will actually contribute <em>if</em> he reaches the majors — not a best-case ceiling, but my honest projection of what kind of big leaguer he becomes assuming development goes reasonably well. The probability of him getting there is a separate question that the rank addresses more than the grade does.
+
+<div style="margin-top:8px;font-size:11px;color:var(--text2)">
+<strong>Hitter scale:</strong> 80 = Top 5 overall (&gt;7.0 WAR) · 70 = Top 10 (5.0–7.0) · 60 = All-Star (3.4–4.9) · 55 = Above-avg reg (2.5–3.3) · 50 = Avg everyday (1.6–2.4) · 45 = Low-end reg/platoon (0.8–1.5) · 40 = Bench (0.0–0.7) · 30 = Up &amp; Down · 20 = Org guy
+</div>
+<div style="margin-top:4px;font-size:11px;color:var(--text2)">
+<strong>Pitcher scale:</strong> 80 = Ace, top 1-3 arms in baseball · 70 = #1/#2 front-end starter · 60 = #2/#3 starter · 55 = #3/#4 starter · 50 = #4/#5 starter · 45 = 5th starter · 40 = Back-end/spot starter/long relief · 30 = Up &amp; Down · 20 = Org guy
+</div></p>
+<p style="margin-bottom:10px"><strong>Who qualifies:</strong> Standard MLB prospect eligibility rules apply. A player is removed from the list once he exceeds <strong>130 at-bats</strong> or <strong>50 innings pitched</strong> at the MLB level, or has spent <strong>45 days on an active big league roster</strong> (excluding IL stints). Sam Antonacci is currently on the list but will be removed once he crosses the 130 AB threshold, which is imminent. Noah Schultz has also made his MLB debut and will be removed once he exceeds 50 innings pitched at the big league level.</p>
+<p style="margin-bottom:0px"><strong>Navigation:</strong> Click any player row to expand the full scouting report, tool grades, 2026 results, and pipeline note. The +/- movement column will populate in future editions. The <strong>Grade</strong> column (always visible) shows my FV. Scrolling right reveals FG/BA/Pipeline FV grades, an average FV, then outlet ranks and a consensus average rank. Use the 🌙 button to toggle dark mode.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel">
+<div class="panel-hdr" onclick="togglePanel('p-call')"><div><h3>🚀 2026 Callup Tracker</h3><div class="ph-sub">Who's coming and when</div></div><span class="panel-toggle" id="p-call-icon">＋</span></div>
+<div class="panel-body" id="p-call">
+<div class="callup-grid">
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:2px;padding-bottom:4px;border-bottom:1px solid var(--border)">In The Bigs</div>
+<div class="callup-card"><div class="callup-name">Noah Schultz <span class="callup-eta eta-now">UP ✓</span></div><div class="callup-detail">MLB debut Apr 14. Already in the rotation. Will graduate once he hits 50 IP.</div></div>
+<div class="callup-card"><div class="callup-name">Sam Antonacci <span class="callup-eta eta-now">UP ✓</span></div><div class="callup-detail">MLB debut Apr 2026. .313/.500 in 14 MLB games. Prospect eligibility expiring.</div></div>
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin:10px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--border)">Debuted / Back in AAA</div>
+<div class="callup-card"><div class="callup-name">Tyler Schweitzer <span class="callup-eta eta-now">Debuted / AAA</span></div><div class="callup-detail">Made his MLB debut Apr 2026, optioned back to Charlotte. First arm off the bench when the rotation needs a spot.</div></div>
+<div class="callup-card"><div class="callup-name">Duncan Davitt <span class="callup-eta eta-now">Debuted / AAA</span></div><div class="callup-detail">MLB debut in 2025, currently at Charlotte. Seven-pitch mix — called on when the Sox need bulk innings.</div></div>
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin:10px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--border)">Imminent</div>
+<div class="callup-card"><div class="callup-name">Hagen Smith <span class="callup-eta eta-soon">Imminent</span></div><div class="callup-detail">1.38 ERA, 19 K in 13 IP at Charlotte. The stuff is back and the command has tightened — a callup could come any week if the Sox rotation falters.</div></div>
+<div class="callup-card"><div class="callup-name">Tanner McDougal <span class="callup-eta eta-soon">Imminent</span></div><div class="callup-detail">3.26 ERA, 22 K in 19.1 IP at Charlotte. Could beat Smith to Chicago.</div></div>
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin:10px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--border)">Mid-Season Target</div>
+<div class="callup-card"><div class="callup-name">Braden Montgomery <span class="callup-eta eta-mid">Mid-season</span></div><div class="callup-detail">.358/.456/.755 at Double-A. Targeted for summer debut.</div></div>
+<div class="callup-card"><div class="callup-name">William Bergolla <span class="callup-eta eta-mid">Mid-season</span></div><div class="callup-detail">.457/.525 at Charlotte (on IL). Return + sustained hitting = callup.</div></div>
+<div class="callup-card"><div class="callup-name">David Sandlin <span class="callup-eta eta-mid">Mid-season</span></div><div class="callup-detail">Rehabbing at High-A, headed to Charlotte. 100 mph upside — if the ramp-up goes clean, second-half starter is realistic.</div></div>
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin:10px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--border)">Post-TJS — Timeline TBD</div>
+<div class="callup-card"><div class="callup-name">Ky Bush <span class="callup-eta eta-late">Post-TJS</span></div><div class="callup-detail">On 60-day IL recovering from Tommy John. On the 40-man — bullpen spot possible if healthy in second half.</div></div>
+<div class="callup-card"><div class="callup-name">Drew Thorpe <span class="callup-eta eta-late">Post-TJS</span></div><div class="callup-detail">Already proved his stuff at the MLB level — five quality starts in 2025. Return timeline TBD but ceiling is mid-rotation.</div></div>
+<div class="callup-card"><div class="callup-name">Mason Adams <span class="callup-eta eta-late">Post-TJS</span></div><div class="callup-detail">Command-first five-pitch pitcher. Projects as back-end rotation piece once healthy. Return expected mid-2026.</div></div>
+
+<div style="grid-column:1/-1;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin:10px 0 2px;padding-bottom:4px;border-bottom:1px solid var(--border)">Wildcards</div>
+<div class="callup-card"><div class="callup-name">Wikelman González <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">0.87 ERA in Charlotte relief. Bullpen callup could come any week — stuff is MLB-ready.</div></div>
+<div class="callup-card"><div class="callup-name">Shane Murphy <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">2.12 ERA at Double-A. Not on 40-man. Rule 5 eligible after 2026 — org has to notice eventually.</div></div>
+<div class="callup-card"><div class="callup-name">Riley Gowens <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">3.00 ERA in 9.0 IP at Charlotte as a full-time reliever. Not on 40-man — needs a spot to make the jump.</div></div>
+<div class="callup-card"><div class="callup-name">Jacob Gonzalez <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">.813 OPS, 4 HR in early Charlotte action. Versatile INF depth — useful if the Sox need a roster call.</div></div>
+<div class="callup-card"><div class="callup-name">Drew Romo <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">.952 OPS in 14 Charlotte games. Fourth org in one offseason — if the bat holds, emergency catching depth is real.</div></div>
+<div class="callup-card"><div class="callup-name">Rikuu Nishida <span class="callup-eta eta-late">Wildcard</span></div><div class="callup-detail">.405 career OBP, 40 SB in 2025. Utility/bench speedster — needs a 40-man spot but the on-base skills are MLB-ready.</div></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="panels">
+<div class="panel">
+<div class="panel-hdr" onclick="togglePanel('p-log')"><div><h3>📈 Risers &amp; Fallers</h3><div class="ph-sub">Running changelog — what moved and why</div></div><span class="panel-toggle" id="p-log-icon">＋</span></div>
+<div class="panel-body" id="p-log">
+<div style="font-size:12px;color:#888;font-style:italic;padding:4px 0">This is the first published edition — the changelog will track all moves from here.</div>
+</div>
+</div>
+<div class="panel">
+<div class="panel-hdr" onclick="togglePanel('p-watch')"><div><h3>👀 Watching Closely</h3><div class="ph-sub">Off the list — one hot month from forcing their way in</div></div><span class="panel-toggle" id="p-watch-icon">＋</span></div>
+<div class="panel-body" id="p-watch">
+<div class="watch-item"><div class="watch-name">Ben Peoples, RHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 25 · Trade — Adrian Houser deal</span></div><div class="watch-meta">0.00 ERA · 7 K in 10.0 IP at Charlotte 2026 · MLB appearances</div><div class="watch-note">Acquired from Tampa Bay with Duncan Davitt in the Adrian Houser trade, July 2025. Converted from starter to full-time reliever in 2025 and thrived — 2.65 ERA, 1.21 WHIP, 39:20 K:BB in 37.1 IP at Triple-A Durham. Already has MLB experience with the Sox and has no remaining prospect eligibility, so he won't appear on the ranked list. But his 2026 Charlotte results (0.00 ERA in 10.0 IP) make him a legitimate bullpen piece. Pipeline had him #20 in the system preseason. One of the more useful arms in the org right now.</div></div>
+<div class="watch-item"><div class="watch-name">Boston Smith, OF &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 23 · Trade — Curtis Mead deal</span></div><div class="watch-meta">New to the org — tools-first corner OF</div><div class="watch-note">Acquired from Washington in the Curtis Mead trade in March 2026. Toolsy corner outfielder with plus raw power and above-average arm. Hit tool is the question — raw exit velocities are loud but strikeout rates have been high. At 23 in his first full year in the system, 2026 at the affiliates will be the first real look at what the Sox have.</div></div>
+<div class="watch-item"><div class="watch-name">Stiven Flores, C &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 20 · Intl — Venezuela</span></div><div class="watch-meta">Venezuelan catcher with plus arm and 20+ HR upside</div><div class="watch-note">DSL/ACL catching prospect with legitimate power projection and a strong arm behind the plate. The hit tool and receiving refinement are works in progress, but the raw tools — particularly the power and arm — are real. At 20 with years of development ahead, he's a name to track as he works through the lower levels.</div></div>
+<div class="watch-item"><div class="watch-name">Fabian Ysalla, RHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 22 · Draft — 2024</span></div><div class="watch-meta">Power arm in the lower levels</div><div class="watch-note">2024 draft arm with a live fastball working through the lower levels of the system. Limited exposure so far but the stuff has drawn attention. One of several org arms worth monitoring as the 2026 season unfolds at Low-A Kannapolis.</div></div>
+<div class="watch-item"><div class="watch-name">Truman Pauley, RHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 22 · Low-A · 2025 5th Rd, TCU</span></div><div class="watch-meta">4.38 ERA · 14 K in 12.1 IP · 10.2 K/9</div><div class="watch-body">The K rate is real even if the ERA is bumpy. Fastball 94-96, slider with sharp late tilt. If the walk rate (7.3/9) settles toward 4-5, he's a top-50 conversation by midseason.</div></div>
+<div class="watch-item"><div class="watch-name">Jackson Nove, LHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 23 · Low-A · relief</span></div><div class="watch-meta">1.08 ERA · 15 K in 8.1 IP · 16.2 K/9</div><div class="watch-body">You don't post 16+ K/9 by accident. Low-A relief context makes it soft, but 15 strikeouts in 8.1 innings demands a note. Watch whether the Sox stretch him out as a starter.</div></div>
+<div class="watch-item"><div class="watch-name">Pierce George, RHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 23 · Low-A · relief</span></div><div class="watch-meta">0.00 ERA · 0 BB · 11 K in 8.0 IP</div><div class="watch-body">Eight scoreless innings with zero walks and 11 K. The zero walks is the number — command-first relievers with that profile can stick at higher levels. Almost no public scouting data, which makes the results more interesting, not less.</div></div>
+<div class="watch-item"><div class="watch-name">James Taussig, OF &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 23 · Low-A · 2024 Draft</span></div><div class="watch-meta">.308/.471/.846, 1.317 OPS · 1 HR in 17 PA</div><div class="watch-body">Tiny sample — 5 games, 17 PA — but .846 SLG at Low-A with hard contact is a loud start. At 23 in Low-A he's repeating a level he should be moving through quickly. If the power shows up over a larger sample, he's forcing a conversation about bumping him onto the main list.</div></div>
+<div class="watch-item"><div class="watch-name">Marcelo Alcala, CF &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 20 · Low-A · International</span></div><div class="watch-meta">.136/.283/.182 · 13 games · 3 SB</div><div class="watch-body">The line is cold but the age is the argument. Alcala is 20 in Low-A with plus CF defense and speed — the same age-relative-to-level calculation that makes us bullish on Mogollon and Cruz. The hit tool needs work but write the name down. A hot May could move him onto the main list.</div></div>
+<div class="watch-item"><div class="watch-name">Marco Barrios, RHP &nbsp;<span style="font-size:10px;color:#999;font-weight:400">Age 20 · Low-A · International</span></div><div class="watch-meta">1.93 ERA · 4.2 IP early</div><div class="watch-body">Only 20 years old, holding his own at Low-A. International arms who post sub-2 ERAs at Low-A at 20 have developmental pathways worth tracking early. The age relative to the level is the entire argument — write the name down.</div></div>
+</div>
+</div>
+</div>
+
+<div class="toolbar">
+  <button class="dark-toggle" id="darkBtn" onclick="toggleDark()">🌙 Dark</button>
+  <input type="text" id="srch" placeholder="Search name, pos, level, tier, acq..."/>
+  <select id="fPos"><option value="">All positions</option><option>LHP</option><option>RHP</option><option>SS</option><option>OF</option><option>CF</option><option>MI</option><option>C</option><option>1B</option><option>INF</option><option>3B</option></select>
+  <select id="fETA"><option value="">All ETAs</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2031</option></select>
+  <select id="fTier"><option value="">All tiers</option><option>Elite</option><option>High Ceiling</option><option>Intriguing Depth</option><option>Deep Sleepers</option></select>
+  <select id="fAcq"><option value="">All acq types</option><option>Draft</option><option>Trade</option><option>International</option><option>Waiver</option><option>UDFA</option></select>
+
+</div>
+<div class="tab-bar">
+  <button class="tab active" onclick="setView('all',this)">All prospects</button>
+  <button class="tab" onclick="setView('bat',this)">Hitters</button>
+  <button class="tab" onclick="setView('pit',this)">Pitchers</button>
+</div>
+<p style="font-size:12px;color:#111;font-weight:700;margin-bottom:6px;text-align:center">👆 Click a player's name to expand their full scouting report</p>
+<div class="tbl-wrap">
+<table id="tbl"><thead id="thead"></thead><tbody id="tbody"></tbody></table>
+</div>
+<script>
+let sortK="rank",sortD=1,expanded=new Set(),view="all";
+const tierC={"Elite":"t1","High Ceiling":"t2","Intriguing Depth":"t3","Deep Sleepers":"t4"};
+const acqC={"Draft":"acq-draft","Trade":"acq-trade","International":"acq-intl","Waiver":"acq-waiver","UDFA":"acq-udfa"};
+const acqN={"Draft":1,"International":2,"Trade":3,"Waiver":4,"UDFA":5};
+const levelN=l=>{if(l==="MLB")return 0;if(l.startsWith("AAA"))return 1;if(l.startsWith("AA"))return 2;if(l==="A+"||l.startsWith("A+"))return 3;if(l.startsWith("A"))return 4;return 5;};
+function tgCls(v){if(!v)return"";if(v>=70)return"g70";if(v>=60)return"g60";if(v<=35)return"g30";if(v<=45)return"g40";return"";}
+function mvHTML(p){
+  return'';
+}
+
+
+const P=[
+{rank:1,prevRank:1,name:"Noah Schultz",pos:"LHP",type:"pit",age:22,ht:"6'10\"",wt:"220",bats:"L",throws:"L",level:"MLB",status:"mlb",eta:"2026",pipe:2,fg:2,fgFV:50,baGrade:50,myGrade:70,espnOrg:2,espnFV:50,fgTop100:36,pipeTop100:47,baTop100:26,baRawGrade:70,espnTop100:96,espnTop200:null,lawTop100:95,pipeGrade:55,baRank:1,tier:"Elite",fv:55,
+grades:{fb:65,br:70,ch:55,ctl:50},
+acqType:"Draft",acqShort:"1st Rd 2022 — #26",acqFull:"1st round 2022, 26th overall, out of Oswego East HS (IL). Local product — 40 miles from Rate Field.",
+comp:"Randy Johnson — same deceptive low arm slot, whip-like delivery from an enormous frame, wipeout breaking ball hitters can't pick up",ceiling:"Ace",floor:"#3 starter",
+scouting:"6'10\" frame with a deceptive low arm slot and a whip-like delivery that generates extreme deception. His money pitch is a <strong>two-seam sinker</strong> — mid-90s touching 99 — that explodes on hitters from a low three-quarters slot. The double-plus <strong>slider averages 83 mph</strong> with 2,878 rpm and <strong>16 inches of gloveside sweep</strong> — up from just 11 inches in 2025, a one-offseason step-change. Also works a potentially above-average <strong>changeup (86-89 mph)</strong> and a <strong>cutter (88-91 mph touching 93)</strong> for a genuine four-pitch mix. Battled right patellar tendinitis throughout 2025 and dedicated his offseason to body conditioning at the Boras Sports Training Institute.",
+results:"Charlotte pre-callup 2026: <strong>3-0, 1.29 ERA, 0.43 WHIP, 19 K in 14 IP.</strong> Walk rate dropped from 13.8% to 4.3%. MLB debut April 14: 4⅓ IP, 4 K.",
+outlook:"Getz: <em>'We view Noah as a front-line starter at the major league level.'</em> The slider improvement from 11 to 16 inches of sweep in one offseason is the kind of step-change that defines aces. The only question is whether a 6'10 in frame with tendinitis history holds up over a full season.",
+pipelineNote:"Org: BA #1 · FG #2 · Pipe #2 · ESPN #2. Nationally: BA #26 · FG #36 · Pipe #47 · Law #95 · ESPN #96. FG and BA are most bullish nationally; Law and ESPN most conservative pre-season. His 1.29 ERA MLB debut is validating the aggressive grades.",
+era:1.29,ip:14.0,g:3,so:19,bb:2,whip:0.429},
+
+{rank:2,prevRank:2,name:"Braden Montgomery",pos:"OF",type:"bat",age:23,ht:"6'2\"",wt:"201",bats:"S",throws:"R",level:"AA — Birmingham",status:"",eta:"2026",pipe:1,fg:5,fgFV:50,baGrade:45,myGrade:60,espnOrg:1,espnFV:50,fgTop100:100,pipeTop100:34,baTop100:73,baRawGrade:60,espnTop100:null,espnTop200:189,lawTop100:30,pipeGrade:55,baRank:3,tier:"Elite",fv:55,
+grades:{hit:40,pow:60,run:50,arm:70,fld:50},
+acqType:"Trade",acqShort:"Trade — Crochet deal",acqFull:"Acquired from Boston in the Garrett Crochet trade, December 2024. The headliner alongside Kyle Teel.",
+comp:"Mookie Betts — elite arm, plus-plus power, premium athlete who impacts the game in every dimension",ceiling:"30-HR switch-hitting star",floor:"Above-average RF regular",
+scouting:"Switch hitter, 6'2 in/220, double-plus arm. <strong>60+ college HRs at Texas A&M.</strong> The most physically gifted position player in the system. 2025: .270/.360/.444, 12 HR, then a scorching <strong>1.161 OPS in the Arizona Fall League.</strong> K rate jumped to 29% at Double-A with sub-70% contact rate — the most interesting org-wide evaluation debate in recent memory. FanGraphs has him dead last on their top 100; Pipeline has him #36 overall.",
+results:"Current 2026 at Double-A Birmingham: <strong>.358/.456/.755, 1.211 OPS, 4 HR in 15 games.</strong>",
+outlook:"BA confirms he's an <strong>average runner</strong> who takes a few steps to get rolling out of the box but is fine underway with a two-base mentality on balls to the outfield. The Crochet trade's legacy is almost entirely dependent on Montgomery. If the contact rate improves and the power (genuine plus-plus) plays every day, this is a 30-HR switch hitter in right field — an extremely valuable player.",
+pipelineNote:"Org: BA #3 · FG #5 · Pipe #1 · ESPN #1. Nationally: Law #30 · Pipe #34 · ESPN top-200 #189 · BA #73 · FG #100. Pipeline and Law are most bullish nationally; ESPN left him off their top-100 entirely. The sub-70% contact rate is the central debate.",
+g:15,ab:53,ba:0.358,obp:0.456,slg:0.755,ops:1.211,hr:4,rbi:14,sb:2},
+
+{rank:3,prevRank:3,name:"Caleb Bonemer",pos:"SS/3B",type:"bat",age:20,ht:"6'1\"",wt:"195",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:3,fg:1,fgFV:50,baGrade:50,myGrade:60,espnOrg:3,espnFV:50,fgTop100:33,pipeTop100:59,baTop100:27,baRawGrade:60,espnTop100:34,espnTop200:null,lawTop100:44,pipeGrade:55,baRank:2,tier:"Elite",fv:55,
+grades:{hit:55,pow:60,run:50,arm:50,fld:50},
+acqType:"Draft",acqShort:"2nd Rd 2024 — #43",acqFull:"2nd round 2024, 43rd overall, $3M overslot signing out of Okemos HS (MI). UVA commit.",
+comp:"Gunnar Henderson",ceiling:"Perennial all-star type",floor:"Solid everyday 3B/OF",
+scouting:"Unique strideless swing that generates elite bat speed — <strong>hard contact even on mishits.</strong> Unlike anything else in the system. <strong>BA has him 23rd overall nationally</strong> among all prospects. Long-term home is 3B or corner OF/DH with Cholowsky inevitably coming to SS and Colson Montgomery most likely shifting over to third. Only real developmental question: breaking ball recognition. BA notes his speed may slow to <strong>fringe-average</strong> as he matures physically — the 50 run grade may not hold long-term.",
+results:"Carolina League MVP in his pro debut. Current 2026 at High-A Winston-Salem: <strong>.269/.381/.654, 1.035 OPS, 4 HR in 14 games.</strong>",
+outlook:"Age (20) + level (High-A) + results = one of the more compelling cases for the top tier in any system. The $3M overslot investment already looks like one of the best values in the 2024 draft class. Triple-A by 2027 is realistic; MLB by 2028.",
+pipelineNote:"Org: BA #2 · FG #1 · Pipe #3 · ESPN #3. Nationally: FG #33 · BA #27 · ESPN #34 · Law #44 · Pipe #59. Best national consensus of any White Sox prospect — all five major lists have him in the national top-60. FG and ESPN are most bullish; Pipeline is most conservative.",
+g:14,ab:52,ba:0.269,obp:0.381,slg:0.654,ops:1.035,hr:4,rbi:15,sb:1},
+
+{rank:4,prevRank:4,name:"Hagen Smith",pos:"LHP",type:"pit",age:22,ht:"6'3\"",wt:"215",bats:"L",throws:"L",level:"AAA — Charlotte",status:"",eta:"2026",pipe:4,fg:3,fgFV:50,baGrade:45,myGrade:60,espnOrg:4,espnFV:50,fgTop100:65,pipeTop100:69,baTop100:92,baRawGrade:60,espnTop100:null,espnTop200:127,lawTop100:58,pipeGrade:50,baRank:4,tier:"Elite",fv:55,
+grades:{fb:60,br:60,ch:45,ctl:40},
+acqType:"Draft",acqShort:"1st Rd 2024 — #5",acqFull:"1st round 2024, 5th overall, $8M signing out of Arkansas. SEC Pitcher of the Year (2.04 ERA, 48.6% K rate).",
+comp:"Carlos Rodón",ceiling:"#1/#2 ace/front-end starter",floor:"Mid-rotation starter/high leverage bullpen arm",
+scouting:"Fastball and slider both grade <strong>70</strong> — a genuine two-plus combination almost no pitching prospect possesses simultaneously. At Arkansas: 2.04 ERA, 48.6% K rate — one of the most dominant college pitching seasons in recent SEC history. Changeup grades 45 and was the entire focus of his offseason. On strict innings limit due to HS TJS history.",
+results:"2026 at Charlotte: <strong>1.38 ERA, 13.2 K/9 in 13 IP.</strong> Midseason callup strongly expected.",
+outlook:"When healthy and commanding the zone, no one in this system has a higher ceiling. 70/70 at 22 with a 1.38 AAA ERA demands Elite status. The only caveat is the injury history and the walk rate. BA notes scouts are split on whether he becomes a midrotation starter or, if the third pitch never develops, a <strong>Josh Hader-type dominant closer</strong> — both outcomes are genuinely exciting.",
+pipelineNote:"Org: BA #4 · FG #3 · Pipe #4 · ESPN #4. Nationally: FG #65 · BA #92 · Pipe #69 · Law #58 · ESPN top-200 #127. Law and FG are most bullish; ESPN left him off the top-100. Command consistency is the story.",
+era:1.38,ip:13.0,g:4,so:19,bb:5,whip:1.0},
+
+{rank:5,prevRank:5,name:"Tanner McDougal",pos:"RHP",type:"pit",age:23,ht:"6'5\"",wt:"185",bats:"R",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:6,fg:6,fgFV:50,baGrade:40,myGrade:55,espnOrg:6,espnFV:45,fgTop100:104,pipeTop100:null,baTop100:100,baRawGrade:55,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:50,baRank:6,tier:"High Ceiling",fv:50,
+grades:{fb:65,br:60,ch:45,ctl:40},
+acqType:"Draft",acqShort:"5th Rd 2021 — #155",acqFull:"5th round 2021, 155th overall, out of Desert Oasis HS (Las Vegas, NV).",
+comp:"Lance Lynn",ceiling:"#2/#3 starter",floor:"#4 starter",
+scouting:"The system's best redemption arc. Went <strong>0-18 in decisions</strong> over his first two and a half pro seasons; 6.04 ERA in 2024. Then the velocity jumped and the mechanics clicked. <strong>Fastball now mid-to-high 90s touching triple digits.</strong> Hammer curveball, above-average slider, 46.5% groundball rate. 2025 breakout: <strong>3.26 ERA, 136 K in 113⅓ IP</strong> across High-A and Double-A.",
+results:"Current 2026 at Charlotte: <strong>3.26 ERA, 22 K in 19.1 IP across 4 starts.</strong> Walk rate (12 BB in 19.1 IP) is the one concern.",
+outlook:"Getz: <em>'He can be an impactful arm at the Major League Level in 2026.'</em> The stuff is MLB-caliber right now. The walk rate is the only thing between him and a rotation spot in Chicago, but his call-up feels inevitable at this point.",
+pipelineNote:"Org: BA #6 · FG #6 · Pipe #6 · ESPN #6. Nationally: BA #100 · FG #104 (just outside). FG and BA are aligned on the fringe top-100 valuation. ESPN flagged him as an arrow-up arm with mid-season top-100 potential if command holds.",
+era:3.26,ip:19.1,g:4,so:22,bb:12,whip:1.138},
+
+{rank:6,prevRank:6,name:"Billy Carlson",pos:"SS",type:"bat",age:19,ht:"6'1\"",wt:"185",bats:"R",throws:"R",level:"A — Kannapolis",status:"",eta:"2029",pipe:5,fg:7,fgFV:45,baGrade:45,myGrade:55,espnOrg:5,espnFV:45,fgTop100:null,pipeTop100:70,baTop100:100,baRawGrade:55,espnTop100:100,espnTop200:null,lawTop100:66,pipeGrade:50,baRank:5,tier:"High Ceiling",fv:50,
+grades:{hit:50,pow:45,run:50,arm:70,fld:70},
+acqType:"Draft",acqShort:"1st Rd 2025 — #10",acqFull:"1st round 2025, 10th overall, out of Crespi Carmelite HS (Encino, CA).",
+comp:"Brandon Crawford",ceiling:"Brandon Crawford defense + 20-HR bat",floor:"Elite defensive SS / utility role",
+scouting:"Multiple scouts have called him the <strong>best defensive prep shortstop they've ever seen</strong> — an unqualified statement. Plus-plus arm that touched upper 90s as a pitcher. Gold Glove-level instincts already projecting far above-average at the MLB level. The Sox are working on shortening his swing to unlock the 20-HR power the org believes is there. Remarkable side note: if he weren't such an elite defensive shortstop, he could have been drafted purely as a <strong>pitcher</strong> — his prep fastball touched <strong>97 mph</strong> with a legitimate hammer curve. The White Sox have no interest in finding that out.",
+results:"Pro debut at Low-A Kannapolis: <strong>.192/.354/.288 through 14 games.</strong> The .354 OBP for a 19-year-old HS draftee at Low-A is the number that matters most.",
+outlook:"The defensive floor alone makes him a future big leaguer. Whether the bat develops into a two-way impact player or a Crawford-type glove-first regular, both outcomes have real MLB value. Long runway — 2029 at the earliest.",
+pipelineNote:"Org: BA #5 · FG #7 · Pipe #5 · ESPN #5. Nationally: BA #100 · Pipe #70 · Law #66 · ESPN #100. Not on FG top-110. Three major lists have him in their national top-100 despite zero pro experience — unanimous confidence in the defensive floor at SS.",
+g:14,ab:52,ba:0.192,obp:0.354,slg:0.288,ops:0.642,hr:0,rbi:6,sb:3},
+
+{rank:8,prevRank:7,name:"Sam Antonacci",pos:"2B/LF",type:"bat",age:23,ht:"5'11\"",wt:"185",bats:"L",throws:"R",level:"MLB",status:"mlb",eta:"2026",pipe:9,fg:11,fgFV:40,baGrade:35,myGrade:50,espnOrg:10,espnFV:40,fgTop100:null,pipeTop100:null,baTop100:98,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:9,tier:"High Ceiling",fv:45,
+grades:{hit:55,pow:40,run:45,arm:50,fld:50},
+acqType:"Draft",acqShort:"5th Rd 2024 — #140",acqFull:"5th round 2024, 140th overall, $575K out of Coastal Carolina. IL product from Springfield.",
+comp:"David Fletcher — walks more than he strikes out, makes contact, plays everywhere",ceiling:"Above-average everyday 2B",floor:"Bench/utility piece",
+scouting:"Career-defining trait is plate discipline. 2025 split between High-A Winston-Salem and Double-A Birmingham: <strong>.429 OBP, 13% walk rate, 14% K rate, 48 SB</strong> — ranked 3rd in all of minor league baseball in OBP. Below-average power but hit tool and instincts are legitimate MLB-caliber. Played for Team Italy in the WBC. Encouraging power development signal: his <strong>90th percentile exit velocity jumped to 103.1 mph</strong> with a max of 110 mph in 2025 — the 40-grade power may be conservative.",
+results:"<strong>.313/.500/.479, 5 SB through 14 MLB games.</strong> Will exhaust prospect eligibility soon (130 AB threshold).",
+outlook:"The 5th-round steal of the 2024 draft. If .400+ OBP is realistic at MLB level, the lack of power becomes irrelevant. I lean toward believing it.",
+pipelineNote:"BA #9 org · FG #13 org · Pipe #9 org · ESPN #10 org. Nationally: BA spring #98. Cracked BA's updated top-100 after his MLB debut. The fastest-rising White Sox prospect on national lists — his production will determine how high he climbs.",
+g:14,ab:48,ba:0.313,obp:0.500,slg:0.479,ops:0.979,hr:2,rbi:7,sb:5},
+
+{rank:9,prevRank:8,name:"William Bergolla Jr.",pos:"SS/2B",type:"bat",age:21,ht:"5'11\"",wt:"165",bats:"L",throws:"R",level:"AAA — Charlotte",status:"inj",eta:"2026",pipe:11,fg:17,fgFV:40,baGrade:35,myGrade:50,espnOrg:9,espnFV:40,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:199,lawTop100:null,pipeGrade:45,baRank:12,tier:"High Ceiling",fv:45,
+grades:{hit:55,pow:20,run:60,arm:55,fld:55},
+acqType:"Trade",acqShort:"Trade — Tanner Banks",acqFull:"Acquired from Philadelphia in exchange for reliever Tanner Banks, July 2024. Son of former pro player William Bergolla.",
+comp:"Luis Arraez",ceiling:"Luis Arraez-type top-of-order regular",floor:"Quality bench/utility piece",
+scouting:"<strong>Led all of minor league baseball with a 5% strikeout rate in 2025</strong> — a historically rare achievement. One career home run across 600+ professional plate appearances. Purely hit tool, contact, and speed. Multiple scouts put him in 'faster Luis Arraez with better plate discipline' territory. At 21 in Triple-A, significantly younger than the level.",
+results:"Current 2026 at Charlotte (IL): <strong>.457/.525/.571 through 10 games</strong> before hitting the injured list. Return timeline TBD.",
+outlook:"The power question won't go away — zero career HRs means he needs elite OBP rates every year to be an everyday player. But the plate discipline data suggests he absolutely can. A 2026 callup feels inevitable if Charlotte continues.",
+pipelineNote:"BA #11 org · FG #17 org · Pipe #11 org · ESPN #9 org. Nationally: ESPN top-200 #199. McDaniel gave him the most interesting write-up in the 101-200 range, comparing his contact skill to Arraez but noting the lack of power or elite speed that typically makes the profile work in the bigs. My most aggressive divergence from national consensus.",
+g:10,ab:35,ba:0.457,obp:0.525,slg:0.571,ops:1.096,hr:0,rbi:8,sb:2},
+
+{rank:10,prevRank:9,name:"Jaden Fauske",pos:"OF",type:"bat",age:19,ht:"6'3\"",wt:"200",bats:"L",throws:"R",level:"A — Kannapolis",status:"",eta:"2028",pipe:7,fg:10,fgFV:45,baGrade:35,myGrade:50,espnOrg:8,espnFV:40,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:50,baRank:7,tier:"High Ceiling",fv:50,
+grades:{hit:50,pow:55,run:50,arm:55,fld:50},
+acqType:"Draft",acqShort:"2nd Rd 2025 — #44",acqFull:"2nd round 2025, 44th overall, out of Nazareth Academy (La Grange, IL). LSU commit. 20 minutes from Rate Field.",
+comp:"Harrison Bader",ceiling:"20-25 HR corner OF with elite OBP",floor:"4th OF / bench bat",
+scouting:"Jim Thome personally endorsed him. <strong>BA: Hit 55, Power 50, Run 55, Arm 50, Field 50</strong> — the best overall OF tool grades in the system. Named Illinois Gatorade Player of the Year. The power should develop with physical maturity — at 6'2 in/200 with projection remaining, the 50 raw power grade won't stay there.",
+results:"Current Low-A Kannapolis: <strong>.245/.403/.388 through 13 games.</strong> The .403 OBP for a high school draftee at Low-A is the number that matters most.",
+outlook:"The tool set is the most balanced OF profile in the system. The power development over the next two years determines whether the ceiling is 4th OF or a legitimate everyday player.",
+pipelineNote:"BA #7 org · FG #8 org · Pipe #7 org · ESPN #8 org. Top-10 at all major outlets. Not yet on national top-100 lists as a 2025 first-year pro, but the hit tool projection and athleticism have FG and BA both very engaged on the long-term upside.",
+g:13,ab:49,ba:0.245,obp:0.403,slg:0.388,ops:0.791,hr:0,rbi:4,sb:4},
+
+{rank:11,prevRank:10,name:"Samuel Zavala",pos:"CF",type:"bat",age:21,ht:"5'11\"",wt:"175",bats:"L",throws:"L",level:"AA — Birmingham",status:"",eta:"2027",pipe:null,fg:23,fgFV:40,baGrade:null,myGrade:50,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,tier:"High Ceiling",fv:45,
+grades:{hit:45,pow:50,run:55,arm:55,fld:60},
+acqType:"Trade",acqShort:"Trade — Dylan Cease",acqFull:"Acquired from San Diego in the Dylan Cease trade, March 2024. Was the #7 Padres prospect at time of trade. Signed by San Diego for $1.2M out of Venezuela.",
+comp:"Ramon Laureano",ceiling:"George Springer-type power/speed CF",floor:"4th OF / reserve CF",
+scouting:"Plus CF defense with a strong arm — <strong>the defensive tools are already MLB-caliber.</strong> Was the Padres' #7 prospect at trade time. A disastrous 2024 (.187 at High-A) raised real hit-tool questions. Rebounded in 2025 (.252/.360/.372, 122 wRC+), suggesting the 2024 collapse was an adjustment rather than a true talent signal.",
+results:"Currently at Double-A at 21: <strong>.288/.403/.558, .961 OPS, 4 HR through 14 games.</strong>",
+outlook:"Through 14 Double-A games at 21, Zavala is holding his own — .961 OPS, 4 HRs. If these results hold through 60+ games, he becomes the org's CF answer by 2027. The 2024 collapse looks increasingly like an adjustment.",
+pipelineNote:"BA #15 org · FG #15 org · Pipe #14 org. Not yet on national top-100 lists. Cross-org acquisition from San Diego; still working through the upper levels at 21.",
+g:14,ab:52,ba:0.288,obp:0.403,slg:0.558,ops:0.961,hr:4,rbi:10,sb:0},
+
+{rank:12,prevRank:11,name:"Javier Mogollon",pos:"MI",type:"bat",age:20,ht:"5'8\"",wt:"160",bats:"R",throws:"R",level:"A — Kannapolis",status:"",eta:"2028",pipe:13,fg:31,fgFV:35,baGrade:35,myGrade:50,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:16,tier:"High Ceiling",fv:45,
+grades:{hit:40,pow:50,run:60,arm:55,fld:50},
+acqType:"International",acqShort:"Intl — Venezuela 2023",acqFull:"International signing from Venezuela, 2023 signing class.",
+comp:"Yoán Moncada — raw power/speed from the middle infield",ceiling:"Power-hitting 2B/3B everyday regular",floor:"Utility IF with pop",
+scouting:"5'8 in/160 but <strong>BA gave him a 60 raw power grade</strong> — generating that power at his size requires exceptional bat speed and leverage. 10 HRs in DSL debut, 8 more in the ACL at ages 18-19. <strong>Pipeline jumped him from #18 to #13 in the system this year</strong> — a significant re-evaluation.",
+results:"Current Low-A Kannapolis: <strong>.175/.433/.300 through 13 games.</strong> The .433 OBP as a 20-year-old is the headline — 14 walks in 60 PA despite a .175 average.",
+outlook:"The power-speed-patience combination from the middle infield is exactly the profile organizations spend big money chasing internationally. The K rate and average need work, but at 20 with a .433 OBP the foundation is real.",
+pipelineNote:"BA #13 org · FG #21 org · Pipe #13 org. Not yet on national top-100 lists. Spring training buzz was real. Plus speed and hard contact metrics intrigue evaluators despite the approach questions.",
+g:13,ab:40,ba:0.175,obp:0.433,slg:0.300,ops:0.733,hr:1,rbi:5,sb:5},
+
+{rank:7,prevRank:12,name:"Christian Oppor",pos:"LHP",type:"pit",age:21,ht:"6'2\"",wt:"175",bats:"L",throws:"L",level:"AA — Birmingham",status:"",eta:"2027",pipe:8,fg:4,fgFV:50,baGrade:35,myGrade:55,espnOrg:7,espnFV:45,fgTop100:95,pipeTop100:null,baTop100:null,baRawGrade:55,espnTop100:118,espnTop200:118,lawTop100:null,pipeGrade:50,baRank:8,tier:"High Ceiling",fv:50,
+grades:{fb:60,br:55,ch:55,ctl:45},
+acqType:"Draft",acqShort:"5th Rd 2023 — #152",acqFull:"5th round 2023, 152nd overall, out of Gulf Coast Community College (FL). The Sox had a verbal to take him in the 11th round in 2022; the A's took him and failed to sign him.",
+comp:"Danny Duffy",ceiling:"#2/#3 starter",floor:"Back-end reliever",
+scouting:"The Sox circled back after the A's draft-and-fail and paid 5th-round money for organizational conviction. <strong>95 mph FB (touching 100), plus slider, curveball, changeup — a full four-pitch mix at 21.</strong> Dominated 2025 from Low-A through High-A. ESPN's Kiley McDaniel: <em>'Arrow-up performer in 2025 who now looks like a potential starter.'</em>",
+results:"Through 3 Double-A starts: <strong>12.91 ERA, 7.2 IP, 4 K, 13 BB.</strong> At 21 in first Double-A exposure, early struggles are expected noise. The 2025 cross-level track record speaks louder.",
+outlook:"The four-pitch mix at 21 is the reason for the starter projection. The key metric: whether the 6 BB in 2 IP is an adjustment or a pattern.",
+pipelineNote:"Org: BA #8 · FG #4 · Pipe #8 · ESPN #7. Nationally: FG #95 · ESPN top-200 #118. FG is the most bullish with a top-100 spot; ESPN named him a pick-to-click for 2027 national list inclusion. The most nationally underrated prospect in this system.",
+era:12.91,ip:7.2,g:3,so:4,bb:13,whip:2.87},
+
+{rank:14,prevRank:13,name:"George Wolkow",pos:"OF",type:"bat",age:20,ht:"6'7\"",wt:"225",bats:"L",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:14,fg:27,fgFV:35,baGrade:35,myGrade:50,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:15,tier:"High Ceiling",fv:45,
+grades:{hit:30,pow:60,run:45,arm:60,fld:50},
+acqType:"Draft",acqShort:"7th Rd 2023 — #209",acqFull:"7th round 2023, 209th overall, $1M overslot signing out of Downers Grove North HS (IL). South Carolina commit.",
+comp:"Joey Gallo power/K profile",ceiling:"30-HR RF regular",floor:"Power bench bat",
+scouting:"6'7 in/239 — the most physically imposing prospect in the system. <strong>BA 65 raw power grade.</strong> Spring Breakout HR at <strong>105.4 mph exit velocity.</strong> The 33 stolen bases in 2025 despite his size are remarkable. Challenge: 29.6% K rate at Low-A while repeating the level with only 13 HRs, but he is also still just 20 years old.",
+results:"Current 2026 at High-A Winston-Salem: <strong>.240/.321/.480 through 13 games.</strong>",
+outlook:"This is the pivotal development year. If the K rate settles near 24-25%, the 30-HR ceiling is achievable. If it stays near 30%, the Gallo comp becomes apt in the wrong direction.",
+pipelineNote:"BA #12 org · FG #18 org · Pipe #12 org. Not yet on national top-100 lists. Power tool is elite; hit tool development at his 6'7\" frame is the central question.",
+g:13,ab:50,ba:0.240,obp:0.321,slg:0.480,ops:0.801,hr:3,rbi:10,sb:1},
+
+{rank:15,prevRank:14,name:"Blake Larson",pos:"LHP",type:"pit",age:20,ht:"6'2\"",wt:"180",bats:"L",throws:"L",level:"Ext. Spring (TJS)",status:"tjs",eta:"2028",pipe:16,fg:25,fgFV:40,baGrade:30,myGrade:50,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:22,tier:"High Ceiling",fv:45,
+grades:{fb:60,br:55,ch:45,ctl:40},
+acqType:"Draft",acqShort:"Supp 2nd Rd 2024 — #68",acqFull:"Supplemental 2nd round 2024, 68th overall, $1.4M out of IMG Academy (FL). Acquired via the Gregory Santos trade with Seattle.",
+comp:"Blake Snell arm slot/profile",ceiling:"Front-of-rotation starter",floor:"Backend reliever",
+scouting:"When healthy: <strong>94-96 mph FB with projection, low-80s sweeper, developing changeup from a low three-quarter arm slot</strong> that generates exceptional deception against LHH. TJS in January 2025. Has not thrown a single professional pitch. Expected to return midseason 2026.",
+results:"Zero professional innings. All evaluation is pre-injury projection.",
+outlook:"Pure ceiling play. The Sox paid $1.4M for the arm they saw. If the TJS recovery goes cleanly, he could move quickly given the stuff.",
+pipelineNote:"BA #16 org · FG #20 org · Pipe #16 org. Not yet on national top-100 lists. TJS limited his 2025. Pre-surgery stuff showed 50-FV upside, and his 2026 debut will be the first real pro look.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:17,prevRank:15,name:"Jeral Perez",pos:"MI",type:"bat",age:21,ht:"5'10\"",wt:"179",bats:"R",throws:"R",level:"AA — Birmingham",status:"",eta:"2027",pipe:15,fg:18,fgFV:40,baGrade:35,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:17,tier:"High Ceiling",fv:45,
+grades:{hit:45,pow:50,run:40,arm:50,fld:40},
+acqType:"Trade",acqShort:"Trade — Kopech/Fedde/Vargas",acqFull:"Acquired from the LA Dodgers in the three-team trade involving Michael Kopech, Erick Fedde, and Miguel Vargas, July 2024. Dominican Republic native.",
+comp:"Jonathan Schoop",ceiling:"15-20 HR starting 2B",floor:"Power bench bat",
+scouting:"<strong>Hit 22 HRs at High-A in 2025</strong> (.763 OPS) — surprising power for a 5'10 in/179-lb middle infielder. <strong>Has never posted a wRC+ below 118 at any pro level</strong> and walked 10%+ at every stop. BA: Hit 45, Power 50, Run 40, Field 40, Arm 50. High swing-and-miss rate and fringy arm will likely force him to 2B permanently.",
+results:"Current 2026 at Double-A Birmingham: <strong>.200/.286/.300 through 13 games.</strong> Rough start — the K rate and early Double-A adjustment are the story.",
+outlook:"The 10%+ walk rate at every level is the underrated part of his game. A 15-18 HR starting 2B who walks 10% of the time has real roster value. Double-A will answer the K rate question.",
+pipelineNote:"BA #14 org · FG #10 org · Pipe #17 org. Not yet on national top-100 lists. 22 HR in High-A at age 20 made evaluators take notice. Approach refinement is the barrier to national recognition.",
+g:13,ab:50,ba:0.200,obp:0.286,slg:0.300,ops:0.586,hr:1,rbi:5,sb:1},
+
+{rank:18,prevRank:16,name:"Landon Hodge",pos:"C",type:"bat",age:19,ht:"6'1\"",wt:"175",bats:"L",throws:"R",level:"ACL (summer)",status:"",eta:"2029",pipe:20,fg:28,fgFV:40,baGrade:30,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:45,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:24,tier:"High Ceiling",fv:40,
+grades:{hit:45,pow:40,run:50,arm:55,fld:55},
+acqType:"Draft",acqShort:"4th Rd 2025 — #106",acqFull:"4th round 2025, 106th overall, $1.1M overslot to pull from his LSU commitment. Crespi Carmelite HS (Encino, CA) — teammate of Billy Carlson.",
+comp:"Austin Wells",ceiling:"Starting catcher with LH bat value",floor:"Backup catcher",
+scouting:"<strong>$1.1M overslot to pull from LSU</strong> — organizational conviction is the primary evaluation signal. BA: Hit 50, Power 40, Run 50, <strong>Arm 55</strong>, Field 45. Left-handed hitter with a plus arm behind the plate. The Sox paid significant overslot money to keep him out of a powerhouse program. BA describes him as presently <strong>more tools over skills</strong> with an aggressive approach that showed more discipline on the showcase circuit. Timeline is conservative: <strong>BA does not expect full-season ball until late 2026 or early 2027.</strong>",
+results:"Has not yet made his professional debut — summer ACL assignment pending.",
+outlook:"Best catching prospect in the system with Teel and Quero graduated. The system is thin at catcher behind him, creating an accelerated developmental pathway.",
+pipelineNote:"BA and FG both have him in the system top-20 based on 2025 draft pedigree. Too early for national org rankings at most outlets.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:19,prevRank:17,name:"Alexander Albertus",pos:"3B",type:"bat",age:21,ht:"6'2\"",wt:"200",bats:"R",throws:"R",level:"Ext. Spring (injury)",status:"inj",eta:"2028",pipe:21,fg:26,fgFV:40,baGrade:null,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:45,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"High Ceiling",fv:45,
+grades:{hit:55,pow:50,run:45,arm:55,fld:50},
+acqType:"Trade",acqShort:"Trade — Kopech/Fedde/Vargas",acqFull:"Acquired from the LA Dodgers in the three-team trade involving Michael Kopech, Erick Fedde, and Matt Vargas, July 2024. From Aruba, signed by the Dodgers in 2022.",
+comp:"Eduardo Escobar-type corner INF with better patience",ceiling:"Everyday 3B with plus OBP",floor:"Power utility INF",
+scouting:"Career .304 minor league hitter with <strong>elite plate discipline</strong> — never walked fewer than 10% at any pro level and posted a 124 wRC+ with the Dodgers organization in 2024. BA: Hit 50, Power 50, Arm 55 — a complete tool profile at the hot corner. Org notes describe him as having the <strong>fastest bat speed</strong> in the system. BA lists his arm strength as the best among 3B prospects in the org at 70-grade.",
+results:"Fractured left tibia in July 2024, limited to just 8 rehab games in 2025 (.333/.520/.444). Expected to join Low-A or High-A by end of April 2026.",
+outlook:"Injury has now kept him off the field for the better part of two years in the White Sox system. When he gets healthy sustained time, the tools suggest a legitimate everyday 3B. Still only 21. This is his year to prove it.",
+pipelineNote:"Early stage — not yet on national org rankings. Raw international sign with significant projection upside at the hot corner.",
+g:null,ab:null,ba:null,obp:null,slg:null,ops:null,hr:null,rbi:null,sb:null},
+
+{rank:13,prevRank:18,name:"Kyle Lodise",pos:"SS/2B",type:"bat",age:22,ht:"5'11\"",wt:"180",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2027",pipe:10,fg:13,fgFV:40,baGrade:35,myGrade:50,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:10,tier:"High Ceiling",fv:45,
+grades:{hit:50,pow:45,run:55,arm:45,fld:50},
+acqType:"Draft",acqShort:"3rd Rd 2025 — #76",acqFull:"3rd round 2025, 76th overall, $922,500 out of Georgia Tech. Transferred from Division II Augusta University where he posted a 1.034 OPS over two seasons.",
+comp:"Right-handed Sam Antonacci",ceiling:"Above-average everyday 2B/SS",floor:"OBP-driven bench utility piece",
+scouting:"The approach is the carrying tool — <strong>19 BB in 59 PA through 13 games at High-A in 2026</strong>, a .475 OBP that mirrors the same plate discipline that made Antonacci undeniable. BA grades: Hit 50, Power 40, Run 55, Field 50, Arm 45 — similar profile to Antonacci but right-handed. At Georgia Tech he posted .329/.429/.667 with 16 HR, 34 BB, and a 17.6% K rate. <strong>Pipeline has him #10 in the system.</strong> Split-camp prospect — model-heavy teams love the OBP; traditional scouts want to see the hit tool emerge more consistently against pro pitching.",
+results:"2026 High-A Winston-Salem: <strong>.184/.475/.342 through 13 games</strong> — the average is ugly but 19 walks in 59 PA tells the real story. 7 SB. 2025 High-A debut (aggressive assignment straight out of college): .185/.319/.370 in 28 games.",
+outlook:"The .475 OBP at 22 in High-A as a 3rd rounder earns High Ceiling status. The Antonacci comp is intentional — same approach-over-tools profile, same org, similar developmental arc. If the hit tool develops to average, the OBP and plus speed make him a legitimate everyday player. The 40-grade power is the real ceiling cap — this profile needs the on-base skill to be elite every year.",
+pipelineNote:"BA #10 org · FG #16 org · Pipe #10 org. Not yet on national top-100 lists. Solid contact profile at middle infield.",
+g:13,ab:38,ba:0.184,obp:0.475,slg:0.342,ops:0.817,hr:0,rbi:5,sb:7},
+
+{rank:21,prevRank:19,name:"Fernando Graterol",pos:"C",type:"bat",age:17,ht:"6'1\"",wt:"185",bats:"R",throws:"R",level:"DSL (summer)",status:"",eta:"2031",pipe:26,fg:24,fgFV:40,baGrade:null,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:45,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"High Ceiling",fv:45,
+grades:{hit:45,pow:55,run:55,arm:60,fld:40},
+acqType:"International",acqShort:"Intl — Venezuela 2026",acqFull:"Crown jewel of the 2026 international signing class, $1.6M. From Valencia, Venezuela.",
+comp:"Willson Contreras",ceiling:"Above average type two-way threat",floor:"Power-hitting backup catcher",
+scouting:"From Valencia, Venezuela — the same city that produced <strong>Salvador Perez, Wilson Ramos, and Francisco Cervelli.</strong> Org scouting director: <em>'He runs a 6.8 60-yard dash — more athletic than most catchers we've ever evaluated.'</em> Loaded with raw power and bat speed, cannon arm. Receiving and blocking need work — entirely normal for a 17-year-old catcher.",
+results:"Has not yet made his professional debut — summer DSL assignment pending.",
+outlook:"Five years minimum from MLB impact. The athleticism for a catcher is rare enough that the ceiling is genuinely exciting. The $1.6M investment is the signal. Only reason he is not ranked higher is his age and defensive concerns which may lead to a position switch.",
+pipelineNote:"Pipeline's top-ranked catcher in the 2026 international class — just signed. Not yet on org top-30 lists beyond Pipeline. Too early for national rankings.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:29,prevRank:20,name:"Wikelman González",pos:"RHP",type:"pit",age:24,ht:"6'0\"",wt:"220",bats:"R",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{fb:60,br:55,ch:40,ctl:45},
+acqType:"Trade",acqShort:"Trade — Crochet deal",acqFull:"Acquired from Boston in the Garrett Crochet trade, December 2024. Fourth piece of the deal. Venezuelan righty, signed with the Red Sox for $250K in 2018.",
+comp:"Keynan Middleton",ceiling:"High-leverage setup man / closer",floor:"Middle reliever",
+scouting:"<strong>FB 95-97 from a low release point</strong> with exceptional arm-side run, plus cutter. Sox moved him full-time to the bullpen — the stuff profiles as a high-leverage weapon but the age (24) and full-time bullpen role cap the ceiling. Career pattern: dominant second halves following brutal first halves. <strong>2.66 ERA in 16 MLB relief appearances in 2025</strong> before right elbow impingement.",
+results:"Current 2026 at Charlotte: <strong>0.87 ERA in 10.1 IP, 12 K, 4 BB across 9 appearances.</strong> Elbow appears healthy.",
+outlook:"Moved to Intriguing Depth — at 24 as a full-time reliever, the 'High Ceiling' label overstated the trajectory. Still a legitimate MLB bullpen piece who could be called up before the All-Star break if he stays healthy.",
+pipelineNote:"BA #24 org · Pipe #23 org. Not yet on national top-100 lists. Acquired in the Crochet trade; velocity is there but command has been the barrier.",
+era:0.87,ip:10.1,g:9,so:12,bb:4,whip:0.677},
+
+{rank:24,prevRank:21,name:"Shane Murphy",pos:"LHP",type:"pit",age:25,ht:"6'5\"",wt:"210",bats:"L",throws:"L",level:"AA — Birmingham",status:"",eta:"2026",pipe:27,fg:36,fgFV:35,baGrade:30,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:28,tier:"Intriguing Depth",fv:40,
+grades:{fb:35,br:50,ch:45,ctl:60},
+acqType:"Draft",acqShort:"14th Rd 2022 — #431",acqFull:"14th round 2022, 431st overall, out of Chandler-Gilbert Community College (AZ).",
+comp:"Mark Buehrle — same profile, same org skepticism, same results",ceiling:"Solid mid-rotation starter",floor:"Left-handed specialist / long reliever",
+scouting:"FB 87-91 mph. BA: FB 40, CB 45, SL 45, CH 45, Control 65 — no pitch above average. And yet: <strong>led ALL of minor league baseball in WHIP (0.89) in 2025.</strong> 1.66 ERA in 135⅓ IP across three levels. Left off the 40-man. Nobody took him in the Rule 5 draft. The <strong>Mark Buehrle comp is intentional</strong> — Buehrle had no plus pitches, drew org skepticism his entire career, and posted a 3.81 ERA over 16 MLB seasons as a legitimate rotation anchor. Murphy's profile is identical.",
+results:"Current 2026 at Double-A Birmingham: <strong>2.12 ERA, 1.059 WHIP in 17 IP.</strong>",
+outlook:"Only pitched 14 innings in college due to the pandemic and TJS. The White Sox left him unprotected in the December 2025 Rule 5 draft — and nobody took him. That's a useful data point about how the industry perceives the profile, but it doesn't diminish the results. South Side Sox noted the Sox 'gave him no real chance in Spring Training' and he's back in Double-A doing exactly what he's always done. He'll be Rule 5 eligible again after 2026. If the Sox don't add him to the 40-man by November, another team gets another crack at him — and next time the résumé could be even more impressive than before.",
+pipelineNote:"BA #29 org · FG #29 org · Pipe #24 org. Not yet on national top-100 lists. The most underrated arm in this system per several evaluators — best WHIP in the minors in 2025, elite command, fringe stuff.",
+era:2.12,ip:17.0,g:3,so:16,bb:5,whip:1.059},
+
+{rank:26,prevRank:22,name:"Mason Adams",pos:"RHP",type:"pit",age:26,ht:"6'0\"",wt:"200",bats:"R",throws:"R",level:"AA — Birmingham",status:"tjs",eta:"2026",pipe:12,fg:14,fgFV:null,baGrade:35,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:14,tier:"Intriguing Depth",fv:40,
+grades:{fb:45,br:55,ch:50,ctl:60},
+acqType:"Draft",acqShort:"13th Rd 2022 — #401",acqFull:"13th round 2022, 401st overall, out of Jacksonville University.",
+comp:"Kyle Hendricks — command-first, five-pitch mix, pitches to contact, outperforms his pure stuff through location and sequencing",ceiling:"#4/#5 rotation piece",floor:"Spot starter / long reliever",
+scouting:"Career <strong>3.09 ERA across 233 innings</strong> with a <strong>6% walk rate</strong> — elite command from day one at every level. Best pitch is an excellent curveball (BA: 60). Full secondary mix. Best season: 2024 (<strong>2.92 ERA, 110 K in 120⅓ IP</strong> across Double-A and Triple-A).",
+results:"TJS in April 2025. Zero 2026 innings — building back toward Birmingham for a midseason return.",
+outlook:"The age (26) limits the ceiling but the high-floor backend starter profile with a career 3.09 ERA has real MLB value. If the TJS recovery goes cleanly, he could be a useful second-half callup.",
+pipelineNote:"BA #21 org · FG #20 org · Pipe #20 org. Not yet on national top-100 lists. Career 3.09 ERA before TJS; command-based profile with a deep arsenal.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:25,prevRank:23,name:"Drew Thorpe",pos:"RHP",type:"pit",age:25,ht:"6'3\"",wt:"205",bats:"R",throws:"R",level:"TJS recovery",status:"tjs",eta:"2026",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{fb:55,br:50,ch:60,ctl:55},
+acqType:"Trade",acqShort:"Trade — Dylan Cease",acqFull:"The #1 piece of the Dylan Cease trade, acquired from San Diego, March 2024.",
+comp:"Nathan Eovaldi injury/upside profile",ceiling:"Mid-rotation #2/#3 when healthy",floor:"#4/#5 starter",
+scouting:"Low-90s FB, <strong>plus changeup</strong> — a genuine swing-and-miss weapon at the MLB level. Above-average command. <strong>1.35 ERA in 11 Double-A starts in 2024</strong>, called straight to MLB — posted 5 quality starts in 9 outings before a flexor strain. TJS wiped out 2025. Tendinitis setback in spring 2026.",
+results:"Zero 2026 innings. Building back toward Charlotte.",
+outlook:"Getz: <em>'We know he can be a Major League starter. He's shown that in the past.'</em> The five MLB quality starts proved the stuff translates. The question now is purely health. Still has prospect eligibility.",
+pipelineNote:"BA #20 org · FG #12 org · Pipe #20 org. Not yet on national top-100 lists. FG remains quite bullish on the pre-TJS arsenal. Healthy return in 2026 could push him onto national lists by midseason.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:23,prevRank:24,name:"David Sandlin",pos:"RHP",type:"pit",age:25,ht:"6'2\"",wt:"200",bats:"R",throws:"R",level:"High-A rehab → Charlotte",status:"",eta:"2026",pipe:18,fg:9,fgFV:45,baGrade:null,myGrade:45,espnOrg:null,espnFV:40,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{fb:65,br:50,ch:50,ctl:45},
+acqType:"Trade",acqShort:"Trade — Jordan Hicks",acqFull:"Acquired from Boston in the Jordan Hicks salary dump, February 2026.",
+comp:"Spencer Turnbull — electric stuff, chronic health concerns, flashes genuine ace-adjacent ceiling when right",ceiling:"Mid-rotation starter",floor:"Power reliever",
+scouting:"<strong>FB 95-97, touches 100.</strong> Multiple outlets called him the system's most criminally underrated arm. Healthy 2025: <strong>3.61 ERA, 107 K in 106 Double-A innings.</strong> Struggled in Triple-A relief (7.61 ERA). Back soreness and elbow issues delayed spring 2026.",
+results:"Back issue in spring training followed by elbow soreness kept him off the mound until April 21, when he made his first rehab start at High-A Winston-Salem: <strong>2.0 IP, 2 H, 1 BB, 4 K, fastball sitting 95 and touching 99.</strong> Charlotte assignment expected once he builds up to full starter workload.",
+outlook:"100 mph velocity at 25 with a developing secondary mix is the profile teams pay enormous prices for. The back and elbow issues delayed his entire spring, but the April 21 rehab start was encouraging — sitting 95 and touching 99 with command intact. Charlotte rotation spot is the destination; MLB callup is realistic in the second half if the ramp-up goes cleanly. The health concerns are real and recurring, which is the only reason he’s not top 15.",
+pipelineNote:"BA #23 org · FG #9 org · Pipe est. top-20. Acquired mid-winter. FG is the most bullish outlet, citing his stuff; ESPN flagged him as a potential #11 in the org if the command stabilizes. Command in relief was the concern with Boston.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:31,prevRank:25,name:"Jacob Gonzalez",pos:"INF",type:"bat",age:23,ht:"6'2\"",wt:"200",bats:"L",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:24,fg:35,fgFV:35,baGrade:30,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:40,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:25,tier:"Intriguing Depth",fv:40,
+grades:{hit:40,pow:40,run:40,arm:55,fld:50},
+acqType:"Draft",acqShort:"1st Rd 2023 — #15",acqFull:"1st round 2023, 15th overall, $3.9M signing out of Ole Miss.",
+comp:"Whit Merrifield utility ceiling",ceiling:"Starter at 2B or 3B",floor:"Utility bench INF",
+scouting:"Former <strong>15th overall pick</strong> — consistent disappointment (.650 OPS in both 2024 and 2025). The tools were always more projection than present. Deployed across all four infield positions. <strong>BA grades him utility-infielder ceiling at best.</strong>",
+results:"Current 2026 at Charlotte: <strong>.239/.350/.463, .813 OPS, 4 HR in 18 games.</strong> The power is finally showing up — worth monitoring through June.",
+outlook:"This is legitimately his last real chance. If he sustains this through June, a callup discussion becomes real. The multi-position versatility is the selling point if the bat is for real.",
+pipelineNote:"BA #17 org (dropped 10 spots) · FG #21 org · Pipe #21 org. Not yet on national top-100 lists. Fell from prospect darling to question mark as upper-level pitching exposed his hit tool limitations.",
+g:18,ab:67,ba:0.239,obp:0.350,slg:0.463,ops:0.813,hr:4,rbi:12,sb:3},
+
+{rank:27,prevRank:26,name:"Anthony DePino",pos:"1B",type:"bat",age:23,ht:"6'1\"",wt:"210",bats:"L",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{hit:50,pow:55,run:50,arm:45,fld:40},
+acqType:"Draft",acqShort:"6th Rd 2025 — #196",acqFull:"6th round 2025, 196th overall, out of Rhode Island. Fell due to age and 1B projection.",
+comp:"Ji-Man Choi",ceiling:"Platoon 1B with 20+ HRs",floor:"Power bat off the bench",
+scouting:"Rewrote the URI record books. <strong>One of only two NCAA D-I players in 2025 to hit 20 HRs AND steal 20 bases.</strong> Fell to pick 196 because of age (23 as a draft pick) and the 1B-only defensive profile. Janish: <em>'Anthony hits the ball as hard as anyone we have.'</em>",
+results:"Current High-A Winston-Salem: <strong>.294/.400/.608, 1.008 OPS, 4 HR through 14 games.</strong>",
+outlook:"The righty 1B profile is the hardest to carry on an MLB roster. The ceiling is real but the position limits how high he ranks. Still a useful bench power bat.",
+pipelineNote:"BA #27 org · FG #25 org · Pipe #27 org. Not yet on national top-100 lists. Power-over-hit first base profile with plus raw power.",
+g:14,ab:51,ba:0.294,obp:0.400,slg:0.608,ops:1.008,hr:4,rbi:10,sb:1},
+
+{rank:28,prevRank:27,name:"Colby Shelton",pos:"INF",type:"bat",age:23,ht:"6'1\"",wt:"200",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{hit:55,pow:55,run:45,arm:55,fld:45},
+acqType:"Draft",acqShort:"6th Rd 2025 — #166",acqFull:"6th round 2025, 166th overall, out of Florida. Hit 25 HRs as a freshman at Alabama before transferring.",
+comp:"J.D. Davis",ceiling:"Above-average everyday corner INF",floor:"Power pinch hitter / platoon corner INF",
+scouting:"Two versions: <strong>Version 1</strong> — Alabama freshman, 25 HRs, 26% K rate. <strong>Version 2</strong> — Florida junior, .377/.458/.606, 11.8% K rate. Both are real. 2025 Low-A debut (.141) was neither. BA: Hit 55, Power 55, Run 45, Field 45, Arm 55.",
+results:"Current High-A Winston-Salem 2026: <strong>1.264 OPS through 13 games</strong> — both versions appear to be merging.",
+outlook:"If the merger of both Sheltons is real, there's a legitimate everyday corner INF profile here. 10 games is too small to conclude anything — but 1.262 OPS at High-A is too loud to ignore.",
+pipelineNote:"BA #28 org · FG #27 org · Pipe #28 org. Not yet on national top-100 lists. Versatile infield option with feel for contact.",
+g:13,ab:49,ba:0.429,obp:0.509,slg:0.755,ops:1.264,hr:3,rbi:20,sb:3},
+
+{rank:30,prevRank:28,name:"Riley Gowens",pos:"RHP",type:"pit",age:26,ht:"6'3\"",wt:"205",bats:"R",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:null,fg:32,fgFV:35,baGrade:null,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{fb:50,br:50,ch:50,ctl:55},
+acqType:"Trade",acqShort:"Trade — from Atlanta",acqFull:"9th round pick 2022 by Atlanta, later traded to the White Sox in the Aaron Bummer deal. Libertyville, IL native.",
+comp:"Javier Assad — org-developed command guy who finds a way",ceiling:"#5 starter on a competitive team",floor:"Long reliever / spot starter",
+scouting:"Led the entire White Sox system in <strong>starts (27), innings (132), and strikeouts (151)</strong> at Double-A Birmingham in 2025 with a 3.44 ERA — and received exactly zero organizational credit. Main concern: 13 HRs allowed in 2025.",
+results:"Finally earned a promotion to Charlotte in early April but has been converted to a full-time reliever: <strong>3.00 ERA, 12 K, 1 BB in 9.0 IP across 6 appearances.</strong>",
+outlook:"The org snub of 2025 is one of the stranger prospect stories in the system. If the HR rate comes down at Charlotte, a midseason callup conversation becomes realistic. Local product (Libertyville, IL).",
+pipelineNote:"BA #30 org · Pipe #30 org. Not yet on national top-100 lists. Mid-rotation ceiling if the command comes together.",
+era:3.0,ip:9.0,g:6,so:12,bb:1,whip:0.778},
+
+{rank:16,prevRank:29,name:"Mathias LaCombe",pos:"RHP",type:"pit",age:23,ht:"6'3\"",wt:"185",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2027",pipe:17,fg:29,fgFV:40,baGrade:35,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:11,tier:"High Ceiling",fv:40,
+grades:{fb:55,br:55,ch:45,ctl:50},
+acqType:"Draft",acqShort:"12th Rd 2023 — #359",acqFull:"12th round 2023, 359th overall, $450K signing (5th round money) out of Cochise Community College (AZ). Born in Pineuilh, France — only the 2nd native of France ever drafted by an MLB team.",
+comp:"Brayan Bello — sinker/sweeper/change from a low slot",ceiling:"Mid-rotation starter",floor:"Power reliever",
+scouting:"<strong>Sinker touches 98 mph.</strong> Low-80s sweeper that Pipeline calls MLB-ready. Improving mid-80s split-changeup. Low arm slot generates significant deception. Paid 5th-round money for a 12th-round pick. 2025 debut: <strong>3.04 ERA, 73 K in 53⅓ IP, .188 opponent average.</strong> Strike% was 61% — goal in 2026 is reaching MLB average (64%).",
+results:"Has not yet logged 2026 innings at High-A Winston-Salem.",
+outlook:"Three legitimate MLB-quality pitches at 98 mph from a deceptive arm slot is a mid-rotation profile, not an org-depth arm. The 2025 debut numbers (.188 opponent average, 73 K in 53⅞ IP) were genuinely dominant for a pro debut. The only development goal is strike rate — he was at 61% in 2025 against an MLB average of 64%. That’s a real, addressable gap, not a structural flaw. If he closes that gap at High-A in 2026, a Double-A assignment by the second half is likely. The fact that he was born in France and is only the second French-born player ever drafted by an MLB team is the least interesting thing about him — the sinker/sweeper/changeup combination from a low slot is genuinely nasty.",
+pipelineNote:"BA #22 org · FG #22 org · Pipe #15 org. Not yet on national top-100 lists. Sleeper arm — 2.52 ERA ACL debut, touching 97 mph. Mid-season risers list candidate if he holds the gains.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:22,prevRank:30,name:"Ky Bush",pos:"LHP",type:"pit",age:26,ht:"6'6\"",wt:"250",bats:"L",throws:"L",level:"TJS recovery",status:"tjs",eta:"2026",pipe:28,fg:15,fgFV:40,baGrade:35,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:13,tier:"Intriguing Depth",fv:40,
+grades:{fb:45,br:55,ch:50,ctl:45},
+acqType:"Trade",acqShort:"Trade — from LA Angels",acqFull:"Acquired from the LA Angels, July 2023. Former Angels prospect.",
+comp:"Rich Hill — multiple-pitch lefty whose stuff plays when healthy, command can wax and wane, more effective when expanding the plate",ceiling:"Mid-rotation starter",floor:"Lefty specialist / bullpen piece",
+scouting:"6'6 in/250 lefty. <strong>3.30 ERA in 106⅓ minor league innings in 2024</strong> before his MLB debut in August. Walked 16 in 17.1 MLB innings but produced an <strong>elite 3.4% barrel rate</strong> — the stuff beats contact even when the location isn't there. TJS wiped out all of 2025. <strong>Getz specifically mentioned him</strong> as an anticipated in-season addition.",
+results:"Zero 2026 innings — building back toward professional action.",
+outlook:"Still has prospect eligibility. The 3.4% barrel rate from his 2024 MLB debut is the key number. A healthy second half could land him in the MLB bullpen.",
+pipelineNote:"BA #17 org · FG #11 org · Pipe #18 org. Not yet on national top-100 lists. Pre-TJS arsenal had legitimate starter upside. FG is the most bullish outlet on the recovery trajectory.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:32,prevRank:31,name:"Gabe Davis",pos:"RHP",type:"pit",age:24,ht:"6'9\"",wt:"225",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2027",pipe:25,fg:null,fgFV:null,baGrade:30,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:27,tier:"Intriguing Depth",fv:40,
+grades:{fb:60,br:60,ch:40,ctl:40},
+acqType:"Draft",acqShort:"5th Rd 2025 — #137",acqFull:"5th round 2025, 137th overall, out of Oklahoma State. Had collarbone/shoulder issues during college.",
+comp:"Bailey Ober as a starter; Tyler Wells in the bullpen",ceiling:"Mid-rotation starter with elite stuff",floor:"Power reliever",
+scouting:"6'9 in frame with a fastball touching <strong>100 mph.</strong> Struggled with command and injuries throughout college at Oklahoma State. Already fast-tracked to High-A despite being a 5th-round pick. As a starter, scouts draw the Bailey Ober comparison given the size, extension, and deceptive downhill plane; as a reliever, the Tyler Wells comp surfaces given the power stuff in shorter bursts.",
+results:"Current High-A Winston-Salem 2026: <strong>2.00 ERA in 9.0 IP, 6 K, 3 BB across 3 starts.</strong>",
+outlook:"The fast-track to High-A as a 5th rounder is the signal. The 6'9 in frame + 100 mph creates obvious projection.",
+pipelineNote:"BA #18 org · FG #23 org · Pipe #18 org. Not yet on national top-100 lists. 2025 draftee — early looks at High-A showed plus velocity from a 6'9\" frame.",
+era:2.0,ip:9.0,g:3,so:6,bb:3,whip:1.111},
+
+{rank:33,prevRank:32,name:"Duncan Davitt",pos:"RHP",type:"pit",age:26,ht:"6'2\"",wt:"205",bats:"R",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:30,fg:21,fgFV:40,baGrade:null,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{fb:55,br:50,ch:45,ctl:50},
+acqType:"Trade",acqShort:"Trade — Adrian Houser",acqFull:"Acquired from Tampa Bay in the Adrian Houser deal, July 2025. University of Iowa product, 18th round pick by the Rays in 2022.",
+comp:"Brad Keller — workmanlike righty who earns outs without overpowering anyone, quality org arm who can eat innings",ceiling:"#5 starter / long reliever",floor:"Org depth swingman",
+scouting:"Iowa product who worked his way through the Rays system. Made his <strong>MLB debut April 10</strong> — called up to fill a rotation need. Posted a 5.03 ERA in 48.1 Charlotte innings in 2025. Still has prospect eligibility (under 50 IP at the MLB level). Back in Charlotte after a brief MLB stint.",
+results:"Made two Charlotte starts (0-1, 7.88 ERA, 11 K in 8.0 IP) before getting called up on April 10 to fill a rotation hole left by Shane Smith’s struggles. His first Charlotte start was strong (7 K in 4 IP, 2 ER) before a rougher outing sent him to the majors anyway. <strong>Current MLB: 6.97 ERA in 10.1 IP.</strong> Manager Venable praised his ability to mix pitches and work both sides of the plate.",
+outlook:"This is what Davitt is — an 18th-round arm who outworked his draft slot and earned his way to the big leagues. Not a prospect in the traditional sense, more an org depth success story. If he stabilizes the rotation even temporarily, that’s legitimate value for a team starved for innings. The ceiling is a #5 starter who provides 150 workable innings. That has real value on a rebuilding club.",
+pipelineNote:"BA #25 org · Pipe #22 org. Not yet on national top-100 lists. Rule 5 success story turned into reliable depth piece.",
+era:6.97,ip:10.1,g:3,so:15,bb:8,whip:1.742},
+
+{rank:35,prevRank:33,name:"Drew Romo",pos:"C",type:"bat",age:24,ht:"6'1\"",wt:"205",bats:"S",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:35,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{hit:40,pow:45,run:45,arm:60,fld:65},
+acqType:"Waiver",acqShort:"Waivers — from Mets",acqFull:"Claimed off waivers from the New York Mets, January 2026. Former Rockies 1st round pick (35th overall, 2020) who rode the waiver wire through four organizations in one offseason.",
+comp:"Austin Hedges",ceiling:"Everyday catcher if bat arrives",floor:"Gold Glove backup catcher",
+scouting:"Unanimous defensive reputation across four organizations — potential plus-plus defender, plus arm, excellent receiver. <strong>The bat has never consistently shown up</strong> — 2025 PCL line translated to only a 75 wRC+. Four waiver claims in one offseason tells you everything about the offensive profile.",
+results:"Current 2026 at Charlotte: <strong>.300/.352/.600, .952 OPS, 4 HR through 14 games.</strong> Most encouraging offensive stretch of his career.",
+outlook:"Given Quero's struggles, Romo is the most interesting emergency MLB catching option in the system. The defensive value is real.",
+pipelineNote:"BA #32 org · Pipe #25 org. Not yet on national top-100 lists. Catching depth — strong contact bat for the position.",
+g:14,ab:50,ba:0.300,obp:0.352,slg:0.600,ops:0.952,hr:4,rbi:10,sb:0},
+
+{rank:36,prevRank:34,name:"Lucas Gordon",pos:"LHP",type:"pit",age:24,ht:"6'3\"",wt:"210",bats:"L",throws:"L",level:"AA — Birmingham",status:"",eta:"2027",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:35,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{fb:50,br:50,ch:55,ctl:60},
+acqType:"Draft",acqShort:"6th Rd 2023 — #179",acqFull:"6th round 2023, 179th overall, out of the University of Texas. 2023 Big 12 Pitcher of the Year: 7-2, 2.63 ERA, 103 K in 102⅔ IP.",
+comp:"Tom Gorzelanny; crafty lefty who earns every out",ceiling:"#4 starter on a competitive roster",floor:"Backend starter / situational lefty",
+scouting:"<strong>Career 2.03 ERA across 244.1 professional minor league innings.</strong> Three full seasons of quietly getting people out with no hype. <strong>2025: .188 opponent average at High-A, 3.59 ERA in 107.2 innings</strong> across A+/AA. Best pitch is a quality changeup. South Side Sox: <em>'Vastly underrated... may evade the wall that softer tossers hit once in the upper minors.'</em>",
+results:"Current 2026 at Double-A Birmingham: <strong>8.53 ERA in 12.2 IP</strong> through 3 starts — has hit the Double-A wall. 4 HR allowed, 8.1 K/9 down from career norms. Prior 2025 track record: .188 opponent average at High-A, 3.59 ERA in 107.2 IP.",
+outlook:"Dropped to #33 after hitting the Double-A wall early — 8.53 ERA through 3 starts. The broader career résumé (244 IP, career 2.03 ERA, .188 opp avg at High-A) still gives him the benefit of the doubt, but the Double-A wall is a real test. Watch closely through May. If the ERA settles back toward 4.00, a reclimb up the list is warranted.",
+pipelineNote:"BA #31 org · Pipe #29 org. Not yet on national top-100 lists. Control-oriented profile in the lower minors.",
+era:8.53,ip:12.2,g:3,so:8,bb:5,whip:1.421},
+
+{rank:37,prevRank:35,name:"Tyler Schweitzer",pos:"LHP",type:"pit",age:25,ht:"6'4\"",wt:"215",bats:"L",throws:"L",level:"AAA — Charlotte",status:"",eta:"2026",pipe:23,fg:22,fgFV:40,baGrade:null,myGrade:35,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{fb:55,br:50,ch:55,ctl:55},
+acqType:"Draft",acqShort:"5th Rd 2022 — #161",acqFull:"5th round 2022, 161st overall, out of Ball State. 2022 MAC Pitcher of the Year. Indianapolis, IN native.",
+comp:"Wily Peralta — stuff that plays at Double-A but gets exposed at higher levels",ceiling:"Fringe MLB starter if Charlotte results are an aberration",floor:"Org depth left-handed starter",
+scouting:"Posted <strong>42.2 consecutive scoreless Double-A innings</strong> in 2025 — then a 7.92 ERA at Charlotte. Made his MLB debut out of necessity, then sent back down. Pipeline: mid-90s FB touching 98, changeup as best pitch. South Side Sox: <em>'Everything the southpaw did as a Baron, he undid as a Knight.'</em>",
+results:"Current 2026 at Charlotte: <strong>4.38 ERA in 12.1 IP across 5 appearances.</strong> Still prospect eligible.",
+outlook:"Moved to Intriguing Depth because the Double-A dominance was real, the MLB callup happened, and a mid-90s FB with a quality changeup is not nothing.",
+pipelineNote:"BA #33 org · Pipe #11 org. Not yet on national top-100 lists. 42⅔ scoreless innings in Double-A in 2025 — one of the sneakier pieces in this system.",
+era:4.38,ip:12.1,g:5,so:12,bb:3,whip:1.378},
+
+{rank:38,prevRank:36,name:"Rikuu Nishida",pos:"2B/OF",type:"bat",age:24,ht:"5'6\"",wt:"150",bats:"L",throws:"R",level:"AAA — Charlotte",status:"",eta:"2026",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:35,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{hit:55,pow:20,run:65,arm:45,fld:55},
+acqType:"Draft",acqShort:"11th Rd 2023 — #329",acqFull:"11th round 2023, 329th overall, $170K out of Oregon. Born in Osaka, Japan. One of the more unique profiles in professional baseball.",
+comp:"Tony Kemp — walks more than he strikes out, plays everywhere, makes teams quietly glad they have him",ceiling:"MLB bench piece / high-OBP utility regular",floor:"Org depth speedster",
+scouting:"One of the most genuinely unusual profiles in the minor leagues. <strong>5-foot-6, 150 lbs</strong> — 24 years old, from Osaka, Japan, drafted out of Oregon in the 11th round. Career <strong>.284/.405</strong> across 274 minor league games with <strong>more walks (180) than strikeouts (149)</strong>. BA grades him 20 raw power — he will not hit the ball over the fence. What he does instead: hits everything, walks constantly, runs elite, plays anywhere. <strong>20+ games at 2B, LF, CF, and RF in his career.</strong> Promoted to Triple-A Charlotte in 2026 and homered in his first game there.",
+results:"<strong>.235/.409/.373 through 14 games at Charlotte in 2026</strong> — homer in his first Triple-A game. 2025 at Double-A: .273/.403/.308, 75 BB, 69 K, 40 SB, 2.6 WAR.",
+outlook:"The case for Nishida is simple: .405 career OBP, multi-position defense, elite speed, and he gets better as he climbs levels — not worse. Not on Pipeline's top 30, not on FanGraphs' top 40. At 24 in Triple-A with a .400+ OBP, a bench callup this summer is realistic and arguably overdue.",
+pipelineNote:"BA #34 org · Pipe #22 org. Not yet on national top-100 lists. Elite baserunner; bat-to-ball contact profile.",
+g:14,ab:51,ba:0.235,obp:0.409,slg:0.373,ops:0.782,hr:1,rbi:3,sb:6},
+
+{rank:20,prevRank:37,name:"Aldrin Batista",pos:"RHP",type:"pit",age:22,ht:"6'2\"",wt:"185",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"inj",eta:"2028",pipe:22,fg:12,fgFV:40,baGrade:30,myGrade:45,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:50,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:18,tier:"High Ceiling",fv:45,
+grades:{fb:50,br:45,ch:60,ctl:50},
+acqType:"Trade",acqShort:"Trade — from Dodgers 2023 (intl slot money)",acqFull:"Signed by the Dodgers as an international free agent in June 2022 for $10,000. Acquired by the White Sox from Los Angeles in August 2023 — the Sox sent $1M in international signing bonus pool money that the Dodgers used to sign South Korean pitcher Hyun-Seok Jang. Came with RHP Máximo Martínez.",
+comp:"Brayan Bello — low slot, sinker/changeup combination, deception-first profile",ceiling:"#3 starter",floor:"High-leverage reliever",
+scouting:"Acquired from the Dodgers for $1M in international pool money. Operates from a low, rock-step delivery that borders on sidearm, generating exceptional deception. <strong>Primary weapon is a 92-95 mph two-seam sinker</strong> with 16 inches of horizontal break; his <strong>84-87 mph changeup is arguably his best pitch</strong> — darting, plus grade, tunnels perfectly off the sinker. The 81-83 mph sweeper is developing but projects to average. FanGraphs has him #12 in the system (40+ FV) and BA had him in the top 15 — a legitimate top-tier RHP prospect before suffering a <strong>stress fracture in his pitching elbow on April 6, 2025</strong>, missing almost the entire year. Rule 5 eligible after 2026.",
+results:"Returning healthy in 2026 at High-A Winston-Salem. Per MLB.com, likely starts there and could reach Double-A Birmingham in the second half. Late 2025 return was rough (5.79 ERA in 14 IP across 7 games) but BA noted his sinker was “down a tick” — a sign of a pitcher finding his legs post-injury, not a structural concern.",
+outlook:"A legitimate top-15 system arm before the injury who dominated in 2024 (3.51 ERA at Low-A, 1.04 ERA at High-A). The late-2025 rust is noise — the question is whether the stress fracture recurs. Rule 5 eligibility after 2026 creates a real deadline: the Sox must add him to the 40-man by November or expose him. A full healthy 2026 at Winston-Salem with a second-half Birmingham push puts him back in High Ceiling consideration. McDougal is the clear top RHP in the system right now; Batista is the one with the highest ceiling if he stays healthy.",
+pipelineNote:"BA #19 org · FG #19 org · Pipe #19 org. Not yet on national top-100 lists. Low-slot mid-90s sinker generated real buzz before the TJS. 2026 return is the first step toward national relevance.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:39,prevRank:0,name:"Jairo Iriarte",pos:"RHP",type:"pit",age:24,ht:"6'2\"",wt:"160",bats:"R",throws:"R",level:"AA — Birmingham",status:"",eta:"2027",pipe:null,fg:null,fgFV:35,baGrade:30,myGrade:35,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:23,tier:"Intriguing Depth",fv:40,
+grades:{fb:50,br:55,ch:55,ctl:40},
+acqType:"Trade",acqShort:"Trade — Dylan Cease",acqFull:"Acquired from San Diego as part of the Dylan Cease trade, March 2024. Was one of the key pieces the White Sox received.",
+comp:"Edwin Díaz if stuff returns — electric arm that simply lost the feel for a season",
+ceiling:"High-leverage backend reliever",floor:"Org depth arm",
+scouting:"Was a top-10 system prospect when he opened 2025 in Triple-A Charlotte's rotation, but his fastball dipped to 90 mph and he walked 14 batters in 14 innings. Chicago sent him to Arizona for biomechanical work and he resurfaced in Charlotte in June out of the bullpen with inconsistent results. BA notes his spin rates also dropped versus his time with the Padres and his body has thickened up. Stuff grades when healthy: FB 50, Slider 55, Changeup 55 — three legitimate pitches. He was never generating the same movement in 2025.",
+results:"Early 2026 at Double-A Birmingham: <strong>0.00 ERA, 9 K in 7.2 IP across 5 appearances.</strong> The velocity appears to be back.",
+outlook:"One of the more fascinating bounceback candidates in the system. The 2025 collapse was alarming enough that the Sox DFA'd him in February — but he cleared waivers and returned on a NRI. The early 2026 Double-A results suggest the stuff is coming back. If the fastball returns to 94+ and the slider regains its shape, there's a legitimate high-leverage bullpen profile here. BA still has him at #23 in the system with a 45/High grade.",
+pipelineNote:"BA #35 org · Pipe #33 org. Not yet on national top-100 lists. Dropped off Pipeline's top-30 after a rough Triple-A showing; velocity regression is the concern.",
+era:0.0,ip:7.2,g:5,so:9,bb:3,whip:1.17},
+{rank:34,prevRank:38,name:"Juan Carela",pos:"RHP",type:"pit",age:24,ht:"6'1\"",wt:"185",bats:"R",throws:"R",level:"AA — Birmingham",status:"tjs",eta:"2027",pipe:null,fg:16,fgFV:40,baGrade:null,myGrade:40,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"Intriguing Depth",fv:40,
+grades:{fb:55,br:60,ch:50,ctl:50},
+acqType:"Trade",acqShort:"Trade — from Yankees",acqFull:"Acquired from the New York Yankees at the 2023 trade deadline.",
+comp:"Freddy Peralta ceiling — slider-dominant RHP who misses bats across multiple levels before the MLB breakout",ceiling:"#3 starter",floor:"Backend reliever",
+scouting:"<strong>3.77 ERA with 114 K in 106⅔ IP</strong> across High-A and Double-A in 2024 — a legitimate top-15 system performance. Low-to-mid 90s FB, <strong>slider as best weapon</strong>, solid secondary mix. TJS in March 2025 wiped out his entire year.",
+results:"Zero 2026 innings — building back toward Double-A Birmingham. Expected back midseason.",
+outlook:"Nobody is sleeping on a pitcher who posted 114 K in 106⅔ IP the year before his injury. The TJS is the only reason he's not in High Ceiling.",
+pipelineNote:"BA #26 org · Pipe #26 org. Not yet on national top-100 lists. Pre-TJS stuff was legitimate; healthy return in 2026 is the first step.",
+era:null,ip:null,g:0,so:null,bb:null,whip:null},
+
+{rank:42,prevRank:39,name:"Ryan Burrowes",pos:"MI",type:"bat",age:21,ht:"5'10\"",wt:"165",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:29,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{hit:50,pow:30,run:65,arm:45,fld:50},
+acqType:"International",acqShort:"Intl — Panama 2022",acqFull:"International signing from Panama, signed April 3, 2022.",
+comp:"Ildemaro Vargas — switch-hitting utility MI with real speed and contact skills, no power, earns roster spots by playing everywhere",ceiling:"Speedy top-of-order utility player",floor:"Bench/utility MI",
+scouting:"Switch hitter with excellent baserunning instincts and 3-position MI versatility. No power. <strong>88.7% stolen base success rate in 2025</strong> — that's a real plus tool. K rate concern has persisted at every level.",
+results:"2025: <strong>.255/.342/.355, 47 SB (88.7% success) in 111 games.</strong> Early 2026 at High-A: .238/.385/.381 through 12 games.",
+outlook:"The floor is a bench speedster who can play three infield positions. The ceiling is a Billy Hamilton-type with more contact ability.",
+pipelineNote:"Not yet on major national org lists. Middle infield depth with a solid contact approach.",
+g:12,ab:42,ba:0.238,obp:0.385,slg:0.381,ops:0.766,hr:0,rbi:4,sb:3},
+
+{rank:40,prevRank:40,name:"Grant Umberger",pos:"LHP",type:"pit",age:24,ht:"6'3\"",wt:"210",bats:"L",throws:"L",level:"A+ — Winston-Salem",status:"",eta:"2027",pipe:null,fg:37,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{fb:55,br:55,ch:50,ctl:55},
+acqType:"UDFA",acqShort:"UDFA — Feb 2025",acqFull:"Undrafted free agent, signed February 2025. Passed over in the 2024 draft after struggling at Virginia Tech, then dominated at Toledo.",
+comp:"Patrick Sandoval — crafty lefty who fell through draft cracks and outperformed his pedigree; ceiling as a #4/#5 with a plus secondary",ceiling:"#5 starter",floor:"Backend reliever",
+scouting:"FanGraphs: <em>'He touched 97 mph... ran nearly a 40% miss rate with his slider... depth starter, multi-inning relief potential.'</em>",
+results:"First pro season (2025): <strong>9-2, 2.56 ERA, 115 K in 105⅔ IP.</strong> Current 2026: <strong>7.24 ERA in 13.2 IP</strong> — rough start.",
+outlook:"The 2025 results were not a mirage — UDFAs who post 9-2 records with 115 K in their first pro season at 24 don’t do it by accident. The 2026 ERA is alarming but 13.2 IP is the smallest possible sample. The real test is whether his command holds up as opposing teams get more tape on him. If he can keep the walk rate near 2025 levels, the mid-rotation profile remains alive. If the walks spike, the bullpen becomes the realistic outcome — where 97 mph + 40% slider miss rate is a very usable weapon. Monitor closely through June before drawing conclusions.",
+pipelineNote:"Not yet on major org lists. Developmental lefty in the lower system.",
+era:7.24,ip:13.2,g:3,so:15,bb:5,whip:1.756},
+
+{rank:43,prevRank:41,name:"Sebastian Romero",pos:"CF",type:"bat",age:17,ht:"6'2\"",wt:"175",bats:"L",throws:"L",level:"DSL (summer)",status:"",eta:"2031",pipe:19,fg:40,fgFV:35,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:40,baRank:null,tier:"Deep Sleepers",fv:40,
+grades:{hit:50,pow:45,run:55,arm:50,fld:50},
+acqType:"International",acqShort:"Intl — Venezuela 2026",acqFull:"$1.5M bonus from Venezuela — #2 piece of the 2026 international class behind Graterol.",
+comp:"Teoscar Hernández",ceiling:"Everyday CF with 20+ HR power",floor:"4th OF",
+scouting:"BA: <em>'Lean, lively 6'2 in frame with advanced feel for hitting from the left side... good athlete and above-average runner who moves well in CF.'</em> Doubles power now with projection for 20+ HRs as he physically matures.",
+results:"Has not yet made his professional debut — summer DSL assignment pending.",
+outlook:"The evaluation split on his power is the central question — BA and Pipeline scouts were genuinely divided on whether the frame fills out to 20+ HR upside or settles as a gap-power center fielder. Both outcomes have real MLB value. Pipeline at #20 reflects the high end of the market; FanGraphs at #40 reflects the skeptics. I split the difference at #41. At 17, impact is at minimum five years away.",
+pipelineNote:"Signed for $1.5M in the 2026 international class — one of the higher-ranked position players in the class. Too early for most org rankings; Pipeline and FG have flagged him as a top international sign.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:44,prevRank:42,name:"Frankeli Arias",pos:"LHP",type:"pit",age:22,ht:"6'1\"",wt:"185",bats:"L",throws:"L",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{fb:50,br:45,ch:45,ctl:50},
+acqType:"International",acqShort:"Intl — 2022 class",acqFull:"International signing, 2022 class.",
+comp:"Anthony Kay — lefty who earns outs without overpowering anyone, flashes enough feel to survive the high minors",ceiling:"Backend starter / situational LHP",floor:"Org depth",
+scouting:"22-year-old LHP who held his own at High-A Winston-Salem in 2025: <strong>4.15 ERA, 6.8 K/9, 4.2 BB/9 in 73.2 IP</strong> across 22 appearances. The K rate is soft and the walk rate is a concern. The age relative to level (22 at High-A) is acceptable for an international arm. Lefty starters who can eat innings at High-A at 22 have developmental paths worth monitoring.",
+results:"Early 2026 at High-A Winston-Salem: <strong>15.75 ERA in 4.0 IP across 5 appearances — rough start.</strong> 2025: 4.15 ERA, 6.8 K/9 in 73.2 IP.",
+outlook:"The case is thin but real — 22-year-old LHP with full-season High-A experience is worth a speculative slot. Needs K rate improvement to move up the list.",
+pipelineNote:"Not yet on major org lists. Developmental lefty in the lower system.",
+era:15.75,ip:4.0,g:5,so:4,bb:6,whip:3.25},
+
+{rank:45,prevRank:44,name:"Nick McLain",pos:"OF",type:"bat",age:22,ht:"6'2\"",wt:"195",bats:"L",throws:"R",level:"A — Kannapolis",status:"inj",eta:"2028",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{hit:45,pow:40,run:55,arm:50,fld:50},
+acqType:"Draft",acqShort:"3rd Rd 2024 — #79",acqFull:"3rd round 2024, 79th overall, out of Michigan. Younger brother of Reds infielder Matt McLain. Signed for $1.3M.",
+comp:"Cavan Biggio — left-handed hitter with a patient approach, makes contact, multi-position capable; whether the power shows up determines the ceiling",ceiling:"Everyday OF if bat develops",floor:"4th OF / depth piece",
+scouting:"Younger brother of Matt McLain. <strong>Limited 2025 track record</strong> — only 58 PA at Low-A Kannapolis (.261/.414/.304). The .414 OBP in limited action is the one notable data point. Currently on the 60-day IL and has not appeared in 2026. The draft slot (79th overall, $1.3M) and family pedigree justify inclusion; the on-field track record is too thin to evaluate meaningfully.",
+results:"<strong>Currently on 60-day IL — no 2026 stats.</strong> 2025 at Low-A Kannapolis: .261/.414/.304 in 13 games.",
+outlook:"Too early to assess with confidence. The draft investment, the pedigree, and the .414 OBP in 58 PAs are enough to keep him on the radar. I may not see him until summer 2026.",
+pipelineNote:"Not yet on major org lists. On the 60-day IL — younger brother of Reds' Matt McLain.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:46,prevRank:46,name:"Eduardo Herrera",pos:"1B/3B",type:"bat",age:19,ht:"6'2\"",wt:"225",bats:"R",throws:"R",level:"ACL/A",status:"",eta:"2029",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{hit:40,pow:60,run:40,arm:50,fld:40},
+acqType:"International",acqShort:"Intl — Venezuela 2024",acqFull:"International signing from Venezuela, 2024 signing class, $1.8M bonus.",
+comp:"Miguel Sanó — massive raw power from a corner, defensive limitations force him to 1B/DH, the bat has to carry everything",ceiling:"30-HR 1B if bat develops",floor:"Power bat off the bench",
+scouting:"Pipeline's <strong>11th-ranked international prospect</strong> in his class and the <strong>only player to receive a 60 raw power grade.</strong> Albert Pujols power comp from evaluators. Defensive limitations will likely force him to 1B long-term.",
+results:"Improved in 2025 with 4 HRs in limited action.",
+outlook:"Five-year patience play. The 60 power grade is the carrying tool. The position caps the ceiling but 30-HR 1B bats have real roster value.",
+pipelineNote:"Not yet on major org lists. International sign showing raw power tools in the low levels.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:47,prevRank:47,name:"Alejandro Cruz",pos:"3B/2B",type:"bat",age:19,ht:"5'11\"",wt:"170",bats:"R",throws:"R",level:"DSL/ACL",status:"",eta:"2029",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{hit:50,pow:45,run:60,arm:50,fld:50},
+acqType:"International",acqShort:"Intl — 2024 class",acqFull:"International signing, 2024 class, $2M bonus — one of the largest recent intl signings in franchise history.",
+comp:"Amed Rosario speed/contact profile",ceiling:"Top-of-order CF with gap power",floor:"Utility / speedy bench piece",
+scouting:"Plus speed, bat-to-ball skills, CF defensive potential. <strong>4 HR and 18 SB in his debut.</strong> The $2M investment signals the org saw elite athleticism at a very young age.",
+results:"DSL/ACL debut: 4 HR, 18 SB.",
+outlook:"Long development runway — realistic impact 2029 or later.",
+pipelineNote:"Not yet on major org lists. Early-stage international prospect.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:48,prevRank:48,name:"Christian Gonzalez",pos:"OF",type:"bat",age:18,ht:"6'0\"",wt:"175",bats:"R",throws:"R",level:"DSL/ACL",status:"",eta:"2030",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Deep Sleepers",fv:35,
+grades:{hit:50,pow:45,run:60,arm:50,fld:50},
+acqType:"International",acqShort:"Intl — $2M 2024 class",acqFull:"International signing, 2024 class. $2M bonus — one of the largest international investments in franchise history.",
+comp:"Ronald Acuña Jr. at same age in complex ball — $2M signee with elite speed, advanced feel to hit, and defensive potential in CF; the ceiling is real even if the gap in physical tools is massive",ceiling:"Top-of-order OF with gap power",floor:"Speedy bench outfielder",
+scouting:"One of the most exciting pre-debut position players in the system. <strong>$2M international signing in 2024</strong> — the org's largest recent intl investment. 2025 debut in the Dominicanand complex leagues: <strong>.411/.512/.570, 1.082 OPS in 130 PA</strong> with 28 runs and 4 SB. Only 18 years old. Plus speed, advanced bat-to-ball for his age, defensive potential in CF. No 2026 stats yet — likely headed back to complex ball.",
+results:"<strong>No 2026 stats yet</strong> — expected in ACL or DSL. 2025 debut: .411/.512/.570 in 130 PA.",
+outlook:"Five-year patience play minimum. The 2025 debut line is exceptional for an 18-year-old in complex ball — .512 OBP and 1.082 OPS. The $2M investment signals the org saw generational athleticism. Write the name down.",
+pipelineNote:"Not yet on major org lists. DSL/ACL level — flagged for plus speed and defensive instincts in center field.",
+g:0,ab:0,ba:null,obp:null,slg:null,ops:null,hr:0,rbi:0,sb:0},
+
+{rank:41,prevRank:49,name:"Justin Sinibaldi",pos:"LHP",type:"pit",age:24,ht:"6'5\"",wt:"215",bats:"L",throws:"L",level:"A+ — Winston-Salem",status:"",eta:"2028",pipe:null,fg:null,fgFV:null,baGrade:null,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:null,tier:"Intriguing Depth",fv:35,
+grades:{fb:55,br:50,ch:50,ctl:50},
+acqType:"Draft",acqShort:"14th Rd 2024 — #409",acqFull:"14th round 2024, 409th overall, out of Rutgers University. New Jersey native.",
+comp:"Brett Anderson — big lefty who relies on sink, command, and sequencing over pure stuff; ceiling as a #5/swingman who eats innings",ceiling:"Power reliever",floor:"Bullpen depth",
+scouting:"Physical 6'5 in lefty. Fastball sits 88-90 touching 94 with sink and run. Sweepy upper-70s slider, mid-80s changeup. Mostly a starter at Rutgers — 13 starts, 3.47 ERA, 83 IP in 2024.",
+results:"Current High-A Winston-Salem 2026: <strong>6.75 ERA in 12.0 IP, 15 K, 6 BB across 3 starts.</strong> Rough surface results, real strikeout ability.",
+outlook:"10 K at High-A demands attention even if the ERA doesn't. Needs more consistent outings before a meaningful assessment.",
+pipelineNote:"Not yet on major org lists. Feel-for-pitching lefty in the lower system.",
+era:6.75,ip:12.0,g:3,so:15,bb:6,whip:1.583},
+
+,
+
+{rank:49,prevRank:0,name:"Luis Reyes",pos:"RHP",type:"pit",age:20,ht:"6'2\"",wt:"190",bats:"R",throws:"R",level:"A+ — Winston-Salem",status:"",eta:"2029",pipe:null,fg:null,fgFV:null,baGrade:30,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:45,baRank:26,tier:"Deep Sleepers",fv:40,
+grades:{fb:50,br:55,ch:45,ctl:45},
+acqType:"International",acqShort:"Intl — $700K 2023",acqFull:"International signing, 2023 class. Signed for $700,000.",
+comp:"Too early — high-effort sinker/slider arm; Seth Lugo developmental path",
+ceiling:"Backend starter or power reliever",floor:"Org depth arm",
+scouting:"Signed for $700K in 2023 and endured highs and lows in his full-season debut at Low-A Kannapolis in 2025. Posted a 6.98 ERA in the first two months, then held hitters to a .153 average in June. Finished with a 4.34 ERA in 87 innings with a 22.9% K rate and a career-best 9.6% walk rate at age 19. Throws a pair of 92-95 mph fastballs, leaning on his lively sinker. His above-average 84-88 mph slider was his most trusted pitch, used more than 50% of the time. Turns to a firmer 86-90 mph changeup far less often. High-effort three-quarters delivery with a deliberate tempo. BA: 45/High grade.",
+results:"2025 at Low-A Kannapolis: <strong>4.34 ERA, 87.0 IP, 22.9% K rate, 9.6% BB rate</strong> in 23 starts at age 19. Headed to High-A Winston-Salem in 2026.",
+outlook:"BA describes him as having the size and strength for a starter's workload but needing to develop his changeup and clean up his delivery. The June dominance shows the stuff plays when he's right. A 19-year-old eating 87 innings at Low-A with a developing slider is exactly the arm you want in your system. High-A 2026 will be the real test.",
+pipelineNote:"Not yet on major org lists. High-A developmental arm.",
+era:null,ip:null,g:null,so:null,bb:null,whip:null},
+
+{rank:50,prevRank:0,name:"Yobal Rodriguez",pos:"RHP",type:"pit",age:17,ht:"6'2\"",wt:"155",bats:"R",throws:"R",level:"DSL",status:"",eta:"2030",pipe:null,fg:null,fgFV:null,baGrade:30,myGrade:30,espnOrg:null,espnFV:null,fgTop100:null,pipeTop100:null,baTop100:null,baRawGrade:null,espnTop100:null,espnTop200:null,lawTop100:null,pipeGrade:35,baRank:29,tier:"Deep Sleepers",fv:40,
+grades:{fb:55,br:45,ch:60,ctl:55},
+acqType:"International",acqShort:"Intl — $230K 2025",acqFull:"Left Cuba in 2022, was playing for MVP Baseball Academy in Florida prior to signing with the White Sox in 2025 for $230,000.",
+comp:"Too early — Cuban arm with advanced feel; Sixto Sánchez changeup profile",
+ceiling:"Mid-rotation starter if velocity develops as expected",floor:"Backend reliever",
+scouting:"Left Cuba in 2022 and signed with the Sox for $230K in 2025. At 6-foot-2, 155 pounds, he's still very lean — the Sox believe he'll add significant velocity as he fills out. Currently 87-91 mph touching 92 with armside run, but the carrying tool is a fading 80 mph changeup that BA grades 60 — a genuine plus swing-and-miss offering with significant separation potential as the fastball velocity grows. Shows feel to spin an 81 mph slider still in development. Locates all pitches well. DSL debut: 18.2 scoreless innings before finishing 2.97 ERA, 33 K in 30.1 IP. Earned DSL Pitcher of the Month in June 2025. BA: 50/Extreme grade.",
+results:"2025 DSL debut: <strong>2.97 ERA, 33 K in 30.1 IP.</strong> DSL Pitcher of the Month, June 2025.",
+outlook:"The 60-grade changeup at age 17 is the carrying tool — that's exceptionally rare for a pitcher this young. The Sox believe the fastball will tick up significantly as he physically matures on his 155-pound frame. Five years minimum from MLB impact, but the combination of feel, command, and a genuine plus secondary at 17 is exactly the profile you want in the DSL. BA has him at #29 in the system — highest-ranked 17-year-old in the org.",
+pipelineNote:"Not yet on major org lists. DSL arm — very early stage.",
+era:null,ip:null,g:null,so:null,bb:null,whip:null}
+];
+
+const BAT_STAT_COLS=[{k:"g",l:"G"},{k:"ab",l:"AB"},{k:"ba",l:"BA"},{k:"obp",l:"OBP"},{k:"slg",l:"SLG"},{k:"ops",l:"OPS"},{k:"hr",l:"HR"},{k:"rbi",l:"RBI"},{k:"sb",l:"SB"}];
+const PIT_STAT_COLS=[{k:"era",l:"ERA"},{k:"ip",l:"IP"},{k:"g",l:"G"},{k:"so",l:"K"},{k:"bb",l:"BB"},{k:"whip",l:"WHIP"}];
+
+function cv(v,k){
+  if(v===null||v===undefined)return'<span class="na">—</span>';
+  let c="";
+  if(k==="era"){c=v<3?"sg":v>5?"sb2":"";}
+  if(k==="whip"){c=v<1.1?"sg":v>1.5?"sb2":"";}
+  if(k==="ops"){c=v>.900?"sg":v<.700?"sb2":"";}
+  if(k==="obp"){c=v>.380?"sg":v<.300?"sb2":"";}
+  let d;
+  if(["ba","obp","slg","ops"].includes(k)){d="."+Math.round(v*1000).toString().padStart(3,"0");}
+  else if(k==="ip"){d=v.toFixed(1);}
+  else if(k==="era"||k==="whip"){d=v.toFixed(2);}
+  else{d=v;}
+  return c?`<span class="${c}">${d}</span>`:String(d);
+}
+
+function gv(p,k){
+  if(k==="rank")return p.rank;
+  if(k==="fv")return p.fv||0;
+  if(k==="name")return p.name.toLowerCase();
+  if(k==="pos")return p.pos;
+  if(k==="age")return p.age;
+  if(k==="acqType")return acqN[p.acqType]||9;
+  if(k==="level")return levelN(p.level);
+  if(k==="eta")return parseInt(p.eta)||9999;
+  if(k==="pipe")return p.pipe||999;
+  if(k==="fg")return p.fg||999;
+  if(k==="fgFV")return p.fgFV||999;
+  if(k==="baGrade")return p.baGrade||999;
+  if(k==="pipeGrade")return p.pipeGrade||999;
+  if(k==="myGrade")return p.myGrade||999;
+  if(k==="avgFV")return avgFV(p)||999;
+  if(k==="baRank")return p.baRank||999;
+  if(k==="espnOrg")return p.espnOrg||999;
+  if(k==="espnFV")return p.espnFV||999;
+  if(k==="pipeTop100")return p.pipeTop100||999;
+  if(k==="baTop100")return p.baTop100||999;
+  if(k==="fgTop100")return p.fgTop100||999;
+  if(k==="baRawGrade")return p.baRawGrade||999;
+  if(k==="avgFVraw")return avgFVraw(p)||999;
+  if(k==="aggTop100")return aggTop100(p)||999;
+  if(k==="espnTop100")return p.espnTop100||p.espnTop200||999;
+  if(k==="lawTop100")return p.lawTop100||999;
+  if(k==="fgRank")return p.fg||999;
+  if(k==="consensusRank")return consensusRank(p)||999;
+  const v=p[k];
+  if(v===null||v===undefined)return 9999;
+  // For batting stats, sort descending means higher=better
+  // 0 is a valid value, treat as 0 not null
+  return typeof v==='string'?v:v;
+}
+
+
+function setView(v,el){
+  view=v;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  el.classList.add("active");
+  sortK="rank";sortD=1;expanded.clear();render();
+}
+
+function sortBy(k){
+  if(sortK===k){sortD*=-1;}else{sortK=k;sortD=1;}
+  render();
+}
+
+function toolsHTML(p){
+  const isP=p.type==="pit";
+  const keys=isP?["fb","br","ch","ctl"]:["hit","pow","run","arm","fld"];
+  const labels=isP?["FB","Brk","CH","Ctl"]:["Hit","Pow","Run","Arm","Fld"];
+  return keys.map((k,i)=>{
+    const v=p.grades[k];
+    return`<div class="tg-item"><div class="tg-name">${labels[i]}</div><div class="tg-val ${tgCls(v||0)}">${v||"—"}</div></div>`;
+  }).join("");
+}
+
+function expandHTML(p){
+  const acqCls=acqC[p.acqType]||"acq-draft";
+  const isP=p.type==="pit";
+  const gKeys=isP?["fb","br","ch","ctl"]:["hit","pow","run","arm","fld"];
+  const gLabels=isP?["FB","Breaking","CH","Control"]:["Hit","Power","Run","Arm","Field"];
+  const statFields=isP?["era","ip","g","so","bb","whip"]:["g","ab","ba","obp","slg","ops","hr","rbi","sb"];
+
+  if(!false){
+    return`<div class="exp-cell" style="display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;max-width:100%;">
+      <div class="exp-top"><span class="exp-name">${p.name}</span><span class="exp-meta">${p.pos} · ${p.level}${p.ht?" · "+p.ht+", "+p.wt+" lbs":""} · Age ${p.age}</span></div>
+      <div class="exp-acq"><span class="acq-pill ${acqCls}" style="font-size:10px">${p.acqFull}</span></div>
+      <div class="grades-row">
+        <div class="fv-block"><div class="fv-lbl">FV Grade</div><div class="fv-num">${p.myGrade||"—"}</div></div>
+        <div class="tools-wrap"><div class="tg-lbl">${isP?"Pitch Grades":"Tool Grades"}</div><div class="tools-grid">${toolsHTML(p)}</div></div>
+      </div>
+      <div class="vitals">
+        <div><div class="v-lbl">Bats / Throws</div><div class="v-val">${p.bats||"—"} / ${p.throws||"—"}</div></div>
+        <div><div class="v-lbl">Player Comp</div><div class="v-val">${p.comp}</div></div>
+        <div><div class="v-lbl">Ceiling</div><div class="v-val">${p.ceiling}</div></div>
+        <div><div class="v-lbl">Floor</div><div class="v-val">${p.floor}</div></div>
+      </div>
+      <div class="exp-section"><div class="e-lbl">Scouting</div><div class="e-body">${p.scouting}</div></div>
+      <div class="exp-section"><div class="e-lbl">2026 Results</div><div class="e-body">${p.results}</div></div>
+      <div class="exp-section"><div class="e-lbl">Outlook</div><div class="e-body">${p.outlook}</div></div>
+      <div class="pipe-note">${p.pipelineNote}</div>
+    </div>`;
+  }
+}
+
+
+function avgFV(p){
+  const vals=[p.fgFV,p.baGrade,p.pipeGrade,p.espnFV].filter(v=>v!==null&&v!==undefined);
+  if(!vals.length)return null;
+  return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+}
+
+function aggTop100(p){
+  // Average of ESPN top-100, Law top-100, Pipeline top-100, FG top-100 (confirmed only)
+  const vals=[p.espnTop100||p.espnTop200,p.lawTop100,p.pipeTop100,p.fgTop100]
+    .filter(v=>v!==null&&v!==undefined&&v<900);
+  if(!vals.length)return null;
+  return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+}
+function avgFVraw(p){
+  const vals=[p.fgFV,p.baRawGrade,p.pipeGrade,p.espnFV].filter(v=>v!==null&&v!==undefined);
+  if(!vals.length)return null;
+  return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+}
+function consensusRank(p){
+  const vals=[p.baRank,p.fg,p.pipe,p.espnOrg].filter(v=>v!==null&&v!==undefined&&v<900);
+  if(!vals.length)return null;
+  return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+}
+
+function toggleDark(){
+  const root=document.documentElement;
+  const isDark=root.getAttribute('data-theme')==='dark';
+  root.setAttribute('data-theme',isDark?'light':'dark');
+  document.getElementById('darkBtn').textContent=isDark?'🌙 Dark':'☀️ Light';
+  localStorage.setItem('theme',isDark?'light':'dark');
+}
+// Restore saved theme
+(function(){
+  const t=localStorage.getItem('theme');
+  if(t){
+    document.documentElement.setAttribute('data-theme',t);
+    document.addEventListener('DOMContentLoaded',()=>{
+      const btn=document.getElementById('darkBtn');
+      if(btn)btn.textContent=t==='dark'?'☀️ Light':'🌙 Dark';
+    });
+  }
+})();
+
+
+function showMobileExpand(html,p){
+  const overlay=document.getElementById('mobileExpand');
+  const content=document.getElementById('mobileExpandContent');
+  // Add player header
+  const tierColor={'Elite':'#6366f1','High':'#3b82f6','Intriguing':'#22c55e','Deep':'#f59e0b'};
+  const tc=tierColor[p.tier.split(' ')[0]]||'#888';
+  const header=`<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid ${tc}">
+    <div>
+      <div style="font-size:20px;font-weight:900;color:var(--text)">#${p.rank} ${p.name}</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:2px">${p.pos}${p.ht?" · "+p.ht+", "+p.wt+" lbs":""} · ${p.level} · ETA ${p.eta} · My FV: <strong>${p.myGrade??'—'}</strong></div>
+    </div>
+  </div>`;
+  content.innerHTML=header+html;
+  overlay.classList.add('active');
+  document.getElementById('expandScrim').classList.add('active');
+  document.body.style.overflow='hidden';
+  return true;
+}
+function closeMobileExpand(){
+  document.getElementById('mobileExpand').classList.remove('active');
+  document.getElementById('expandScrim').classList.remove('active');
+  document.body.style.overflow='';
+}
+
+function render(){
+  const s=document.getElementById("srch").value.toLowerCase();
+  const fP=document.getElementById("fPos").value;
+  const fE=document.getElementById("fETA").value;
+  const fT=document.getElementById("fTier").value;
+  const fA=document.getElementById("fAcq").value;
+
+  let data=P.filter(p=>{
+    if(view==="bat"&&p.type!=="bat")return false;
+    if(view==="pit"&&p.type!=="pit")return false;
+    if(s&&!(p.name.toLowerCase().includes(s)||p.pos.toLowerCase().includes(s)||p.level.toLowerCase().includes(s)||p.acqType.toLowerCase().includes(s)||p.tier.toLowerCase().includes(s)||(p.acqFull||"").toLowerCase().includes(s)))return false;
+    if(fP&&!p.pos.includes(fP))return false;
+    if(fE&&p.eta!==fE)return false;
+    if(fT&&p.tier!==fT)return false;
+    if(fA&&p.acqType!==fA)return false;
+    return true;
+  });
+
+  data.sort((a,b)=>{
+    let av=gv(a,sortK),bv=gv(b,sortK);
+    // Always push nulls/missing to the bottom regardless of sort direction
+    const aN=av===null||av===undefined||av>=9999;
+    const bN=bv===null||bv===undefined||bv>=9999;
+    if(aN&&bN)return 0;
+    if(aN)return 1;
+    if(bN)return -1;
+    if(av<bv)return -sortD;
+    if(av>bv)return sortD;
+    if(sortK==="fv")return a.rank-b.rank;
+    return 0;
+  });
+
+  const statCols=view==="all"?[...BAT_STAT_COLS,...PIT_STAT_COLS]:(view==="bat"?BAT_STAT_COLS:PIT_STAT_COLS);
+
+  // Sticky column widths
+  const s0=36,s1=180,s2=52,s3=46; // rank, name, pos, fv
+  const stickyW=[s0,s1,s2,s3];
+  const stickyLeft=[0,s0,s0+s1,s0+s1+s2];
+
+  // Build thead
+  const thead=document.getElementById("thead");
+  const mk=(l,k,extra="",cls="")=>{
+    const sorted=sortK===k;
+    const arrow=sorted?(sortD===1?"↓":"↑"):"↕";
+    return`<th class="${cls}${sorted?" sorted":""}" ${extra} onclick="sortBy('${k}')">${l}<span class="sa">${arrow}</span></th>`;
+  };
+  const mkNS=(l,extra="",cls="")=>`<th class="no-sort ${cls}" ${extra}>${l}</th>`;
+
+  // On mobile, skip inline left offsets — CSS handles it via position:static
+  const isMobile=window.innerWidth<=768;
+  const sL=(px)=>isMobile?'':`left:${px}px;`;
+
+  // Group header row — 4 sticky cols (rank, name, pos, fv)
+  const stickySpan=5;
+  const stickyWidth=s0+28+s1+s2+s3;
+  let grpCols=view==="all"
+    ?`<th colspan="${stickySpan}" class="${isMobile?'grp no-sort':'grp sticky no-sort'}" style="${sL(0)}min-width:${stickyWidth}px">Player</th><th colspan="5" class="grp no-sort col-div">Info</th><th colspan="7" class="grp no-sort col-div" style="text-align:center;color:#6366f1;border-left:2px solid #e8e8e8">FV Grades</th><th colspan="5" class="grp no-sort col-div" style="text-align:center;color:#0891b2;border-left:2px solid #e8e8e8">Org Rankings</th><th colspan="6" class="grp no-sort col-div" style="text-align:center;color:#7c3aed;border-left:2px solid #e8e8e8">National Rankings</th><th colspan="${BAT_STAT_COLS.length}" class="grp no-sort col-div" style="text-align:center;color:#1d4ed8;border-left:2px solid #e8e8e8">Batting</th><th colspan="${PIT_STAT_COLS.length}" class="grp no-sort col-div" style="text-align:center;color:#b45309">Pitching</th>`
+    :`<th colspan="${stickySpan}" class="${isMobile?'grp no-sort':'grp sticky no-sort'}" style="${sL(0)}min-width:${stickyWidth}px">Player</th><th colspan="5" class="grp no-sort col-div">Info</th><th colspan="7" class="grp no-sort col-div" style="text-align:center;color:#6366f1;border-left:2px solid #e8e8e8">FV Grades</th><th colspan="5" class="grp no-sort col-div" style="text-align:center;color:#0891b2;border-left:2px solid #e8e8e8">Org Rankings</th><th colspan="6" class="grp no-sort col-div" style="text-align:center;color:#7c3aed;border-left:2px solid #e8e8e8">National Rankings</th><th colspan="${statCols.length}" class="grp no-sort col-div" style="text-align:center;border-left:2px solid #e8e8e8">${view==="bat"?"Batting":"Pitching"}</th>`;
+
+  // Adjusted sticky lefts with new +/- col (28px wide) between rank and name
+  const mvLeft=s0;
+  const nameLeft=s0+28;
+  const posLeft=s0+28+s1;
+  const fvLeft=s0+28+s1+s2;
+
+  let sortCols=`
+    ${mk("Rk","rank",`style="${sL(stickyLeft[0])}min-width:${stickyW[0]}px"`,isMobile?"":"sticky")}
+    ${mkNS("+/-",`style="${sL(mvLeft)}min-width:28px;text-align:center;padding:6px 4px"`,isMobile?"":"sticky")}
+    ${mk("Player","name",`style="${sL(nameLeft)}min-width:${stickyW[1]}px"`,"sticky")}
+    ${mkNS("Pos",`style="${sL(posLeft)}min-width:${stickyW[2]}px"`,"sticky")}
+    ${mk("Grade","myGrade",`style="${sL(fvLeft)}min-width:${stickyW[3]}px;text-align:center;font-weight:800"`,isMobile?"col-div":"sticky col-div")}
+    ${mk("Age","age",`style="min-width:36px"`,"col-div")}
+    ${mk("Level","level",`style="min-width:110px"`)}
+    ${mkNS("Acq",`style="min-width:90px"`)}
+    ${mk("ETA","eta",`style="min-width:44px;text-align:center"`)}
+    ${mkNS("@ETA",`style="min-width:38px;text-align:center;color:var(--text3);font-size:10px"`)}
+    ${mk("ESPN FV","espnFV",`style="min-width:52px;text-align:center;border-left:2px solid #e8e8e8"`)}
+    ${mk("FG FV","fgFV",`style="min-width:44px;text-align:center"`)}
+    ${mk("BA FV Adj","baGrade",`style="min-width:44px;text-align:center"`)}
+    ${mk("BA FV Raw","baRawGrade",`style="min-width:48px;text-align:center"`)}
+    ${mk("Pipe FV","pipeGrade",`style="min-width:52px;text-align:center"`)}
+    ${mk("Avg(adj)","avgFV",`style="min-width:56px;text-align:center;font-style:italic"`)}
+    ${mk("Avg(raw)","avgFVraw",`style="min-width:56px;text-align:center;border-right:2px solid #e8e8e8;font-style:italic"`)}
+    ${mk("ESPN Rk","espnOrg",`style="min-width:52px;text-align:center;border-left:2px solid #e8e8e8"`)}
+    ${mk("FG Rk","fg",`style="min-width:44px;text-align:center"`)}
+    ${mk("BA Rk","baRank",`style="min-width:44px;text-align:center"`)}
+    ${mk("Pipe Rk","pipe",`style="min-width:48px;text-align:center"`)}
+    ${mk("Avg Rk","consensusRank",`style="min-width:48px;text-align:center;font-style:italic"`)}
+    ${mk("FG T100","fgTop100",`style="min-width:52px;text-align:center;border-left:3px solid #7c3aed"`)}
+    ${mk("Pipe T100","pipeTop100",`style="min-width:56px;text-align:center"`)}
+    ${mk("BA T100","baTop100",`style="min-width:52px;text-align:center"`)}
+    ${mk("ESPN T200","espnTop100",`style="min-width:60px;text-align:center"`)}
+    ${mk("Law T100","lawTop100",`style="min-width:56px;text-align:center"`)}
+    ${mk("Avg Nat'l","aggTop100",`style="min-width:56px;text-align:center;font-style:italic"`)}
+    ${statCols.map((h,i)=>{
+      const div=i===0?"col-div":"";
+      return mk(h.l,h.k,`style="min-width:44px;text-align:right"`,div);
+    }).join("")}`;
+
+  thead.innerHTML=`<tr>${grpCols}</tr><tr>${sortCols}</tr>`;
+
+  // Build tbody
+  const tbody=document.getElementById("tbody");
+  tbody.innerHTML="";
+
+  data.forEach(p=>{
+    const isExp=expanded.has(p.rank);
+    const tc=tierC[p.tier]||"t3";
+    const acqCls=acqC[p.acqType]||"acq-draft";
+    let sb="";
+    if(p.status==="mlb")sb='<span class="badge badge-mlb">MLB</span>';
+    else if(p.status==="inj")sb='<span class="badge badge-inj">IL</span>';
+    else if(p.status==="tjs")sb='<span class="badge badge-tjs">TJS</span>';
+
+    const statCells=view==="all"
+      ?[...BAT_STAT_COLS.map((h,i)=>`<td style="text-align:right${i===0?";border-left:1px solid #ebebeb":""}">${p.type==="bat"?cv(p[h.k],h.k):'<span class="na">—</span>'}</td>`),
+         ...PIT_STAT_COLS.map((h,i)=>`<td style="text-align:right${i===0?";border-left:1px solid #ebebeb":""}">${p.type==="pit"?cv(p[h.k],h.k):'<span class="na">—</span>'}</td>`)]
+       .join("")
+      :statCols.map((h,i)=>`<td style="text-align:right${i===0?";border-left:1px solid #ebebeb":""}">${cv(p[h.k],h.k)}</td>`).join("");
+
+    const actualCols=10+(view==="all"?BAT_STAT_COLS.length+PIT_STAT_COLS.length:statCols.length);
+
+    const tr=document.createElement("tr");
+    tr.className="dr"+(isExp?" exp":"")+" tier-"+p.tier.split(" ")[0];
+    tr.innerHTML=`
+      <td class="${isMobile?'':`sticky`}" style="${sL(stickyLeft[0])}min-width:${stickyW[0]}px;font-size:12px;color:#888;font-weight:700">${p.rank}</td>
+      <td class="${isMobile?'':`sticky`}" style="${sL(mvLeft)}min-width:28px;text-align:center;padding:6px 4px">${mvHTML(p)}</td>
+      <td class="${isMobile?'':`sticky`}" style="${sL(nameLeft)}min-width:${stickyW[1]}px">
+        <div class="pname">${p.name}${sb}</div>
+        <span class="tier-pill ${tc}">${p.tier}</span>${p.bats?`<span style="font-size:9px;color:#999;margin-left:4px">${p.bats}/${p.throws}</span>`:''}
+      </td>
+      <td class="${isMobile?'':`sticky`}" style="${sL(posLeft)}min-width:${stickyW[2]}px;font-size:12px">${p.pos}<span class="type-tag">${p.type==="pit"?"P":"B"}</span></td>
+      <td class="${isMobile?'col-div':`sticky col-div`}" style="${sL(fvLeft)}min-width:${stickyW[3]}px;text-align:center"><span class="fv-badge">${p.myGrade!==null&&p.myGrade!==undefined?p.myGrade:"—"}</span></td>
+      <td class="col-div" style="font-size:12px;color:#888">${p.age}</td>
+      <td style="font-size:11px;color:#666;min-width:110px">${p.level}</td>
+      <td><span class="acq-pill ${acqCls}">${p.acqType}</span></td>
+      <td style="text-align:center;font-size:12px;color:#888">${p.eta}</td>
+      <td style="text-align:center;font-size:10px;color:var(--text3)">${p.eta&&p.eta!=='—'&&p.age?(parseInt(p.eta)-2026+p.age):''}</td>
+      <td style="text-align:center;font-size:11px;color:#555;border-left:2px solid #e8e8e8">${p.espnFV!==null&&p.espnFV!==undefined?p.espnFV:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.fgFV!==null&&p.fgFV!==undefined?p.fgFV:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.baGrade!==null&&p.baGrade!==undefined?p.baGrade:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.baRawGrade!==null&&p.baRawGrade!==undefined?p.baRawGrade:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.pipeGrade!==null&&p.pipeGrade!==undefined?p.pipeGrade:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555;font-style:italic">${(()=>{const v=avgFV(p);return v!==null?v:'<span class="na">—</span>';})()}</td>
+      <td style="text-align:center;font-size:11px;color:#555;font-style:italic;border-right:2px solid #e8e8e8">${(()=>{const v=avgFVraw(p);return v!==null?v:'<span class="na">—</span>';})()}</td>
+      <td style="text-align:center;font-size:11px;color:#555;border-left:2px solid #e8e8e8">${p.espnOrg!==null&&p.espnOrg!==undefined?"#"+p.espnOrg:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.fg!==null&&p.fg!==undefined?"#"+p.fg:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.baRank!==null&&p.baRank!==undefined?"#"+p.baRank:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:12px;color:#888">${p.pipe?"#"+p.pipe:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555;font-style:italic">${(()=>{const v=consensusRank(p);return v!==null?"#"+Math.round(v):'<span class="na">—</span>';})()}</td>
+      <td style="text-align:center;font-size:11px;color:#555;border-left:2px solid #e8e8e8">${p.fgTop100?"#"+p.fgTop100:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.pipeTop100?"#"+p.pipeTop100:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.baTop100?"#"+p.baTop100:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${(()=>{const v=p.espnTop100||p.espnTop200;return v?"#"+v:'<span class="na">—</span>';})()}</td>
+      <td style="text-align:center;font-size:11px;color:#555">${p.lawTop100?"#"+p.lawTop100:'<span class="na">—</span>'}</td>
+      <td style="text-align:center;font-size:11px;color:#555;font-style:italic">${(()=>{const v=aggTop100(p);return v?"#"+v:'<span class="na">—</span>';})()}</td>
+      ${statCells}`;
+    tr.onclick=()=>{const h=expandHTML(p);if(h){showMobileExpand(h,p);}else{if(expanded.has(p.rank))expanded.delete(p.rank);else expanded.add(p.rank);render();}};
+    tbody.appendChild(tr);
+
+    if(isExp){
+      const er=document.createElement("tr");
+      er.innerHTML=`<td colspan="${actualCols}" style="padding:0">${expandHTML(p)}</td>`;
+      tbody.appendChild(er);
+    }
+  });
+}
+
+document.getElementById("srch").oninput=render;
+document.getElementById("fPos").onchange=render;
+document.getElementById("fETA").onchange=render;
+document.getElementById("fTier").onchange=render;
+document.getElementById("fAcq").onchange=render;
+
+// Panel toggle
+function togglePanel(id){
+  const body=document.getElementById(id);
+  const icon=document.getElementById(id+"-icon");
+  const open=body.classList.toggle("open");
+  icon.textContent=open?"－":"＋";
+}
+
+render();
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileExpand();});
+</script>
+
+<div class="expand-scrim" id="expandScrim" onclick="closeMobileExpand()"></div>
+<div class="expand-overlay" id="mobileExpand">
+  <button class="expand-overlay-close" onclick="closeMobileExpand()">✕</button>
+  <div id="mobileExpandContent"></div>
+</div>
+</body>
+</html>
